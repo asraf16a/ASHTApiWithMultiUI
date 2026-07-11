@@ -1,10 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace ASHT.Application.Inventory.SubCategory.Queries
+﻿namespace ASHT.Application.Inventory.SubCategory.Queries
 {
-    internal class SubCategoryVM
+    public class SubCategoryVM
     {
+        public int Id { get; set; }
+
+        public string SubCategoryName { get; set; }
+
+        public int CategoryId { get; set; }
     }
 }

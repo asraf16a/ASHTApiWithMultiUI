@@ -1,10 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ASHT.Domain.Entities.Inventory
 {
-    internal class SubCategory
+    public class SubCategory
     {
+        public int Id { get; set; }
+
+        public string SubCategoryName { get; set; }
+
+        public int CategoryId { get; set; }
+
+        [ForeignKey("CategoryId")]
+        public Category Category { get; set; }
     }
 }

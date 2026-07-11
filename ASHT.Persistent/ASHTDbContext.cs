@@ -1,22 +1,18 @@
 ﻿using ASHT.Domain.Entities.Inventory;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Text;
 
 namespace ASHT.Persistent
 {
-    public class ASHTDbContext:DbContext
+    public class ASHTDbContext : DbContext
     {
-        public ASHTDbContext(DbContextOptions<ASHTDbContext> options):base(options)
+        public ASHTDbContext(DbContextOptions<ASHTDbContext> options) : base(options)
         {
-            
+
         }
 
-        //public DbSet<Category> Categorys { get; set; }
+        public DbSet<Category> Categorys { get; set; }
 
-        //public DbSet<SubCategory> SubCategorys { get; set; }
+        public DbSet<SubCategory> SubCategorys { get; set; }
 
         public DbSet<Product> Products { get; set; }
 

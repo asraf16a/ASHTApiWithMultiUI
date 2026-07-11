@@ -12,10 +12,10 @@ namespace ASHT.Infrastructure.Services
             _dbContext = dbContext;
         }
 
-        public async Task<SubCategory?> AddAsync(SubCategory subCategory)
+        public async Task<SubCategory> AddAsync(SubCategory subCategory)
         {
 
-            await _dbContext.SubCategorys.Add(subCategory);
+            _dbContext.SubCategorys.Add(subCategory);
             await _dbContext.SaveChangesAsync();
             return subCategory;
         }
