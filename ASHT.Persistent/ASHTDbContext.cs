@@ -1,4 +1,6 @@
-﻿using ASHT.Domain.Entities.Inventory;
+﻿using ASHT.Domain.Entities.Hrm;
+using ASHT.Domain.Entities.Inventory;
+using ASHT.Domain.Entities.Medical;
 using Microsoft.EntityFrameworkCore;
 
 namespace ASHT.Persistent
@@ -16,20 +18,20 @@ namespace ASHT.Persistent
 
         public DbSet<Product> Products { get; set; }
 
-        //public DbSet<Student> Students { get; set; }
+        public DbSet<Appointment> Appointment { get; set; }
 
-        //public DbSet<Department> Departments { get; set; }
+        public DbSet<PrescriptionDetail> PrescriptionDetail { get; set; }
 
-        ////User Related table
-        //public DbSet<User> Users { get; set; }
+        //User Related table
+        public DbSet<User> Users { get; set; }
 
-        //public DbSet<Role> Roles { get; set; }
+        public DbSet<Role> Roles { get; set; }
 
-        //public DbSet<RolePrivilege> RolePrivileges { get; set; }
+        public DbSet<RolePrivilege> RolePrivileges { get; set; }
 
-        //public DbSet<UserRoleMapping> UserRoleMappings { get; set; }
+        public DbSet<UserRoleMapping> UserRoleMappings { get; set; }
 
-        //public DbSet<UserType> UserTypes { get; set; }
+        public DbSet<UserType> UserTypes { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
