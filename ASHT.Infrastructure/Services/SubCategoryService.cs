@@ -4,20 +4,20 @@ using ASHT.Persistent;
 
 namespace ASHT.Infrastructure.Services
 {
-    public class CategoryService : ICategoryService
+    public class SubCategoryService : ISubCategoryService
     {
         private readonly ASHTDbContext _dbContext;
-        public CategoryService(ASHTDbContext dbContext)
+        public SubCategoryService(ASHTDbContext dbContext)
         {
             _dbContext = dbContext;
         }
 
-        public async Task<Category> CreateCategoryAsync(string name)
+        public async Task<SubCategory?> AddAsync(SubCategory subCategory)
         {
-            var category = new Category { Name = name };
-            _dbContext.Categorys.Add(category);
+
+            await _dbContext.SubCategorys.Add(subCategory);
             await _dbContext.SaveChangesAsync();
-            return category;
+            return subCategory;
         }
     }
 }
