@@ -1,10 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace ASHT.Domain.Entities.Hrm
+﻿namespace ASHT.Domain.Entities.Hrm
 {
-    internal class UserRoleMapping
+    public class UserRoleMapping
     {
+        public int Id { get; set; }
+        public int UserId { get; set; }
+        public int RoleId { get; set; }
+
+        public User User { get; set; }
+        public Role Role { get; set; }
     }
 }

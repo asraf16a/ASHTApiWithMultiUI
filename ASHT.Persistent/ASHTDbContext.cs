@@ -18,6 +18,8 @@ namespace ASHT.Persistent
 
         public DbSet<Product> Products { get; set; }
 
+        //Medical Related table
+
         public DbSet<Appointment> Appointment { get; set; }
 
         public DbSet<PrescriptionDetail> PrescriptionDetail { get; set; }

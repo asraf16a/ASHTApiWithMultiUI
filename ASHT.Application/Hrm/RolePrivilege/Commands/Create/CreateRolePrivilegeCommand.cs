@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace ASHT.Application.Hrm.RolePrivilege.Commands.Create
+﻿namespace ASHT.Application.Hrm.RolePrivilege.Commands.Create
 {
-    internal class CreateRolePrivilegeCommand
+    public class CreateRolePrivilegeCommand
     {
     }
 }

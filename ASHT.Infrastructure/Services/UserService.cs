@@ -1,10 +1,11 @@
-﻿using System;
+﻿using ASHT.Domain.Interface;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace ASHT.Infrastructure.Services
 {
-    internal class UserService
+    public  class UserService: IUserService
     {
     }
 }

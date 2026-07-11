@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using ASHT.Domain.Interface;
 
 namespace ASHT.Infrastructure.Services
 {
-    internal class RolePrivilegeService
+    public class RolePrivilegeService : IRolePrivilegeService
     {
     }
 }

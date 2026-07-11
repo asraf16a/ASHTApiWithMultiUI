@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using ASHT.Domain.Interface;
 
 namespace ASHT.Infrastructure.Services
 {
-    public  class PrescriptionDetailService
+    public class PrescriptionDetailService : IPrescriptionDetailService
     {
     }
 }

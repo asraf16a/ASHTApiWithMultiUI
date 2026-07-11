@@ -1,10 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace ASHT.Domain.Entities.Hrm
+﻿namespace ASHT.Domain.Entities.Hrm
 {
-    internal class User
+    public class User
     {
+        public int Id { get; set; }
+        public string Username { get; set; }
+        public string Password { get; set; }
+        public string PasswordSalt { get; set; }
+        public int UserTypeId { get; set; }
+        public bool IsActive { get; set; }
+        public bool IsDeleted { get; set; }
+        public DateTime CreatedDate { get; set; }
+        public DateTime ModifiedDate { get; set; }
+        public virtual UserType UserType { get; set; }
+        public virtual ICollection<UserRoleMapping> UserRoleMappings { get; set; }
     }
 }
