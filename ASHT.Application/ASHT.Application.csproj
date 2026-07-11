@@ -9,6 +9,7 @@
   <ItemGroup>
     <Folder Include="Hrm\" />
     <Folder Include="Account\" />
+    <Folder Include="Inventory\SubCategory\" />
   </ItemGroup>
 
   <ItemGroup>
