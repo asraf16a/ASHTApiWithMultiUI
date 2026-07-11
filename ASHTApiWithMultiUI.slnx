@@ -1,0 +1,9 @@
+<Solution>
+  <Project Path="ASHT.Api/ASHT.Api.csproj" />
+  <Project Path="ASHT.Application/ASHT.Application.csproj" />
+  <Project Path="ASHT.BlazorUI/ASHT.BlazorUI.csproj" />
+  <Project Path="ASHT.Domain/ASHT.Domain.csproj" />
+  <Project Path="ASHT.Infrastructure/ASHT.Infrastructure.csproj" />
+  <Project Path="ASHT.Persistent/ASHT.Persistent.csproj" />
+  <Project Path="ASHT.SharedKarnel/ASHT.SharedKarnel.csproj" />
+</Solution>
