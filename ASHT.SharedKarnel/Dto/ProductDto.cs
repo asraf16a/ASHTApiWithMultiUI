@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace ASHT.SharedKarnel.Dto
+﻿namespace ASHT.SharedKarnel.Dto
 {
-    public  class ProductDto
+    public class ProductDto
     {
         public int Id { get; set; }
 
