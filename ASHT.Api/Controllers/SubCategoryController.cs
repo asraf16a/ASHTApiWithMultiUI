@@ -36,8 +36,6 @@ namespace ASHT.Api.Controllers
                     return BadRequest();
                 }
                 var product = await _mediator.Send(command);
-
-
                 _apiResponse.Data = product;
                 _apiResponse.Status = true;
                 _apiResponse.StatusCode = HttpStatusCode.OK;

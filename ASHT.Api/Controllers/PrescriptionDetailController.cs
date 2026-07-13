@@ -7,5 +7,6 @@ namespace ASHT.Api.Controllers
     [ApiController]
     public class PrescriptionDetailController : ControllerBase
     {
+
     }
 }
