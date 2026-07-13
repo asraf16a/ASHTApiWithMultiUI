@@ -16,10 +16,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
     <PackageReference Include="MediatR" Version="14.1.0" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ASHT.Domain\ASHT.Domain.csproj" />
     <ProjectReference Include="..\ASHT.Infrastructure\ASHT.Infrastructure.csproj" />
   </ItemGroup>
 
