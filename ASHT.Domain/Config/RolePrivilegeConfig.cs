@@ -16,8 +16,12 @@ namespace ASHT.Domain.Config
             builder.Property(r => r.RoleId);
             builder.Property(r => r.IsActive).HasDefaultValue(true).IsRequired();
             builder.Property(r => r.IsDeleted).HasDefaultValue(false).IsRequired();
-            builder.Property(r => r.CreatedDate);
-            builder.Property(r => r.ModifiedDate);
+            builder.Property(r => r.CreatedDate).IsRequired();
+            builder.Property(r => r.ModifiedDate).IsRequired();
+            builder.HasOne(r => r.Role)
+                .WithMany(r => r.RolePrivileges)
+                .HasForeignKey(r => r.RoleId)
+                .HasConstraintName("FK_RolePrivilege_Roles");
         }
     }
 }
