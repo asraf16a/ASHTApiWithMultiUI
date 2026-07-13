@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ASHT.Domain.Entities.Inventory
 {
+    [Table("SubCategory", Schema = "inventory")]
     public class SubCategory
     {
         [Key]

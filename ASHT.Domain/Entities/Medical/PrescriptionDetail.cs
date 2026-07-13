@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ASHT.Domain.Entities.Medical
 {
+    [Table("PrescriptionDetails", Schema = "medical")]
     public class PrescriptionDetail
     {
         [Key]

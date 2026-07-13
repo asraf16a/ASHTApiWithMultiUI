@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ASHT.Domain.Entities.Hrm
 {
+    [Table("UserRoleMappings", Schema = "hrm")]
     public class UserRoleMapping
     {
         [Key]
