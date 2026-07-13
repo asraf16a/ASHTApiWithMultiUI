@@ -1,13 +1,10 @@
 ﻿using ASHT.Application.Inventory.Product.Queries;
 using ASHT.Domain.Interface;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace ASHT.Application.Inventory.Product.Commands.Create
 {
-    public class CreateProductCommandHandler:IRequestHandler<CreateProductCommand,ProductVM>
+    public class CreateProductCommandHandler : IRequestHandler<CreateProductCommand, ProductVM>
     {
         private readonly IProductService _productService;
         public CreateProductCommandHandler(IProductService productService)
@@ -25,11 +22,11 @@ namespace ASHT.Application.Inventory.Product.Commands.Create
                 Name = request.Name,
                 Description = request.Description,
                 Feature = request.Feature,
-                Price = request.Price,
+                PurchasePrice = request.Price,
                 ImageContent = request.ImageContent
             };
-           
-             var result= await _productService.AddAsync(product);
+
+            var result = await _productService.AddAsync(product);
 
             return MapTo(result);
 
@@ -45,7 +42,7 @@ namespace ASHT.Application.Inventory.Product.Commands.Create
                 Name = product.Name,
                 Description = product.Description,
                 Feature = product.Feature,
-                Price = product.Price,
+                Price = product.PurchasePrice,
                 ImageContent = product.ImageContent
             };
         }

@@ -16,7 +16,8 @@ namespace ASHT.Domain.Config
             builder.Property(r => r.CategoryId).IsRequired();
             builder.Property(r => r.SubCategoryId).IsRequired();
             builder.Property(r => r.Feature);
-            builder.Property(r => r.Price);
+            builder.Property(r => r.PurchasePrice);
+            //builder.Property(x => x.PurchasePrice).HasPrecision(18, 2);
             builder.Property(r => r.ImageContent);
         }
     }

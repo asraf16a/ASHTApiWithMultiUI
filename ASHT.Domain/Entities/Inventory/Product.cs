@@ -20,7 +20,7 @@ namespace ASHT.Domain.Entities.Inventory
 
         public string Feature { get; set; }
 
-        public decimal Price { get; set; }
+        public decimal PurchasePrice { get; set; }
 
         public byte[] ImageContent { get; set; }
     }
