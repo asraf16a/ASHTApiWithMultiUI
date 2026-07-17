@@ -5,5 +5,7 @@ namespace ASHT.Domain.Interface
     public interface IRoleService
     {
         Task<Role> AddAsync(Role role);
+
+        Task<int> UpdateAsync(int id, Role role, CancellationToken cancellation);
     }
 }

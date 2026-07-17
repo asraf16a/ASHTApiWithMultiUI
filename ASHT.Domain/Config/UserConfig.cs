@@ -19,6 +19,10 @@ namespace ASHT.Domain.Config
             builder.Property(r => r.IsDeleted).HasDefaultValue(false).IsRequired();
             builder.Property(r => r.CreatedDate);
             builder.Property(r => r.ModifiedDate);
+            builder.HasOne(r => r.UserType)
+                   .WithMany(r => r.Users)
+                   .HasForeignKey(r => r.UserTypeId)
+                   .HasConstraintName("FK_Users_UserTypes");
         }
     }
 }

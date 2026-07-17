@@ -1,7 +1,6 @@
 ﻿using ASHT.Application.Inventory.Product.Commands.Create;
 using ASHT.SharedKarnel.Dto;
 using MediatR;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
 
@@ -37,14 +36,14 @@ namespace ASHT.Api.Controllers
                     return BadRequest();
                 }
                 var product = await _mediator.Send(command);
-                
+
 
                 _apiResponse.Data = product;
                 _apiResponse.Status = true;
                 _apiResponse.StatusCode = HttpStatusCode.OK;
-               
+
                 // Ok-200- success
-                 return Ok(_apiResponse);
+                return Ok(_apiResponse);
             }
             catch (Exception ex)
             {

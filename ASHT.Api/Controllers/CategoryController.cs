@@ -1,4 +1,4 @@
-﻿using ASHT.Application.Inventory.Product.Commands.Create;
+﻿using ASHT.Application.Inventory.Category.Commands.Create;
 using ASHT.SharedKarnel.Dto;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -26,7 +26,7 @@ namespace ASHT.Api.Controllers
         [ProducesResponseType(StatusCodes.Status403Forbidden)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<ActionResult<APIResponse>> Add([FromBody] CreateProductCommand command)
+        public async Task<ActionResult<APIResponse>> Add([FromBody] CreateCategoryCommand command)
         {
             try
             {

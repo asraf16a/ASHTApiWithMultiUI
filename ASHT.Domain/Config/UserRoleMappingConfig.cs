@@ -11,8 +11,9 @@ namespace ASHT.Domain.Config
             builder.ToTable("UserRoleMappings", "hrm");
             builder.HasKey(r => r.Id);
             builder.Property(r => r.Id).UseIdentityColumn();
-            builder.Property(r => r.UserId);
-            builder.Property(r => r.RoleId);
+            builder.HasIndex(r => new { r.UserId, r.RoleId }, "UK_UserRoleMapping").IsUnique();
+            builder.Property(r => r.UserId).IsRequired();
+            builder.Property(r => r.RoleId).IsRequired();
 
         }
     }
