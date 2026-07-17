@@ -4,6 +4,7 @@ using ASHT.Persistent;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ASHT.Persistent.Migrations
 {
     [DbContext(typeof(ASHTDbContext))]
-    partial class ASHTDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260713155634_rolePrivilegeRelation")]
+    partial class rolePrivilegeRelation
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -171,8 +174,7 @@ namespace ASHT.Persistent.Migrations
 
                     b.HasIndex("RoleId");
 
-                    b.HasIndex(new[] { "UserId", "RoleId" }, "UK_UserRoleMapping")
-                        .IsUnique();
+                    b.HasIndex("UserId");
 
                     b.ToTable("UserRoleMappings", "hrm");
                 });
@@ -399,8 +401,7 @@ namespace ASHT.Persistent.Migrations
                         .WithMany("Users")
                         .HasForeignKey("UserTypeId")
                         .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired()
-                        .HasConstraintName("FK_Users_UserTypes");
+                        .IsRequired();
 
                     b.Navigation("UserType");
                 });
