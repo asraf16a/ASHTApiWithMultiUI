@@ -6,4 +6,4 @@ import { Component } from '@angular/core';
   templateUrl: './subcategory.html',
   styleUrl: './subcategory.css',
 })
-export class Subcategory {}
+export class SubcategoryComponent {}

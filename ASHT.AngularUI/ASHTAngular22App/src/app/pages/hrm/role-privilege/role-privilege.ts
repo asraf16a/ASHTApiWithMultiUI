@@ -6,4 +6,6 @@ import { Component } from '@angular/core';
   templateUrl: './role-privilege.html',
   styleUrl: './role-privilege.css',
 })
-export class RolePrivilege {}
+export class RolePrivilegeComponent {
+  
+}
