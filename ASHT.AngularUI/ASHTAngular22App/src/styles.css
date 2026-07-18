@@ -1,1 +1,53 @@
-/* You can add global styles to this file, and also import other style files */
+
+/* Bootstrap */
+@import "bootstrap/dist/css/bootstrap.min.css";
+
+/* Bootstrap Icons */
+@import "bootstrap-icons/font/bootstrap-icons.css";
+
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Global */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body{
+
+    width:100%;
+    height:100%;
+    font-family:'Inter',sans-serif;
+    background:#f4f7fb;
+
+}
+
+body{
+
+    overflow-x:hidden;
+
+}
+
+a{
+
+    text-decoration:none;
+
+}
+
+ul{
+
+    list-style:none;
+    padding:0;
+    margin:0;
+
+}
+
+button{
+
+    cursor:pointer;
+
+}

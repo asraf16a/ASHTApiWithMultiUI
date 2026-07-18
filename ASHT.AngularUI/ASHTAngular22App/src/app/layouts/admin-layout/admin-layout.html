@@ -1,0 +1,46 @@
+<div class="layout">
+
+    <aside class="sidebar">
+        <app-sidebar></app-sidebar>
+    </aside>
+
+    <div class="main-content">
+
+        <app-header></app-header>
+
+        <div class="breadcrumb-section">
+
+            <h4 class="page-title">
+                Admin Dashboard
+            </h4>
+
+            <nav>
+
+                <ol class="breadcrumb">
+
+                    <li class="breadcrumb-item">
+                        Home
+                    </li>
+
+                    <li class="breadcrumb-item active">
+                        Dashboard
+                    </li>
+
+                </ol>
+
+            </nav>
+
+        </div>
+
+        <main class="content-area">
+
+            <router-outlet></router-outlet>
+
+        </main>
+
+        <!-- Footer MUST be inside -->
+        <app-footer></app-footer>
+
+    </div>
+
+</div>

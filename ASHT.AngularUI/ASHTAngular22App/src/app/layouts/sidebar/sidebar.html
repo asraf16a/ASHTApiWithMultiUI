@@ -1,0 +1,77 @@
+<div class="sidebar">
+
+    <div class="logo">
+
+        <i class="bi bi-heart-pulse-fill"></i>
+
+        <span>Clinic ERP</span>
+
+    </div>
+
+    <ul class="menu">
+
+        <li *ngFor="let item of menuItems">
+
+            <!-- Parent Menu -->
+
+            <a *ngIf="item.children"
+               (click)="toggle(item)"
+               class="menu-link">
+
+                <div>
+
+                    <i class="bi" [ngClass]="item.icon"></i>
+
+                    {{item.title}}
+
+                </div>
+
+                <i
+                  class="bi"
+                  [ngClass]="item.expanded ? 'bi-chevron-down':'bi-chevron-right'">
+                </i>
+
+            </a>
+
+            <!-- Single Menu -->
+
+            <a *ngIf="!item.children"
+               [routerLink]="item.route"
+               routerLinkActive="active"
+               class="menu-link">
+
+                <div>
+
+                    <i class="bi" [ngClass]="item.icon"></i>
+
+                    {{item.title}}
+
+                </div>
+
+            </a>
+
+            <!-- Child Menu -->
+
+            <ul *ngIf="item.children && item.expanded" class="submenu">
+
+                <li *ngFor="let child of item.children">
+
+                    <a
+                        [routerLink]="child.route"
+                        routerLinkActive="active">
+
+                        <i class="bi" [ngClass]="child.icon"></i>
+
+                        {{child.title}}
+
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </li>
+
+    </ul>
+
+</div>

@@ -1,13 +1,19 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
+import { CommonModule, DatePipe } from '@angular/common';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { Role } from '../../../shared/models/role';
+
+
 @Component({
   selector: 'app-role',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule,FormsModule,ReactiveFormsModule],
   templateUrl: './role.html',
   styleUrl: './role.css',
 })
-export class Role {
+export class RoleComponent {
 
   roleForm: FormGroup;
 
@@ -32,21 +38,21 @@ export class Role {
       roleName:'Administrator',
       description:'Full system access',
       isActive:true,
-      createdDate:new Date()
+      isDeleted:false
     },
     {
       id:2,
       roleName:'Doctor',
       description:'Manage patients',
       isActive:true,
-      createdDate:new Date()
+      isDeleted:false
     },
     {
       id:3,
       roleName:'Receptionist',
       description:'Appointment Management',
       isActive:false,
-      createdDate:new Date()
+      isDeleted:false
     }
   ];
 

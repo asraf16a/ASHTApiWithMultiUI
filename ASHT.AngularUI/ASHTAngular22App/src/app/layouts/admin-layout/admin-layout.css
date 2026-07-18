@@ -1,0 +1,204 @@
+/* Overall Layout */
+
+.layout{
+
+    display:flex;
+
+    min-height:100vh;
+
+    background:#f4f7fc;
+
+}
+
+/* Sidebar */
+
+.sidebar{
+
+    width:270px;
+
+    transition:.3s;
+
+    flex-shrink:0;
+
+}
+
+.sidebar.collapsed{
+
+    width:80px;
+
+}
+
+/* Main Content */
+
+.main-content{
+
+    flex:1;
+
+    margin-left:270px;
+
+    transition:.3s;
+
+    display:flex;
+
+    flex-direction:column;
+
+    min-height:100vh;
+
+}
+
+/* Expand when Sidebar Collapses */
+
+.main-content.expanded{
+
+    margin-left:80px;
+
+}
+
+/* Breadcrumb */
+
+.breadcrumb-section{
+
+    background:#fff;
+
+    padding:18px 30px;
+
+    border-bottom:1px solid #e9ecef;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.page-title{
+
+    margin:0;
+
+    font-weight:600;
+
+    color:#1e293b;
+
+}
+
+/* Page Content */
+
+.content-area{
+
+    padding:25px;
+
+    flex:1;
+
+    overflow:auto;
+
+}
+
+/* Card Style */
+
+.content-area .card{
+
+    border:none;
+
+    border-radius:15px;
+
+    box-shadow:0 3px 12px rgba(0,0,0,.08);
+
+}
+
+/* Scrollbar */
+
+.content-area::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+.content-area::-webkit-scrollbar-thumb{
+
+    background:#0d6efd;
+
+    border-radius:10px;
+
+}
+
+/* Mobile */
+
+@media(max-width:992px){
+
+.sidebar{
+
+    position:fixed;
+
+    left:-270px;
+
+    top:0;
+
+    z-index:1000;
+
+    height:100vh;
+
+}
+
+.sidebar.show{
+
+    left:0;
+
+}
+
+.main-content{
+
+    margin-left:0;
+
+}
+
+.main-content.expanded{
+
+    margin-left:0;
+
+}
+
+.breadcrumb-section{
+
+    padding:15px;
+
+}
+
+.content-area{
+
+    padding:15px;
+
+}
+
+.layout{
+    display:flex;
+    min-height:100vh;
+    background:#f4f7fb;
+}
+
+.sidebar{
+    width:270px;
+    flex-shrink:0;
+}
+
+.main-content{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    min-height:100vh;
+    margin-left:270px;
+    transition:.3s;
+}
+
+.breadcrumb-section{
+    background:#fff;
+    padding:18px 30px;
+    border-bottom:1px solid #e5e7eb;
+}
+
+.content-area{
+    flex:1;
+    padding:25px;
+    overflow:auto;
+}
+}
