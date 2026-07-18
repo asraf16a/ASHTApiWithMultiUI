@@ -24,6 +24,51 @@ export class Role {
       console.log(this.roleForm.value);
     }
   }
+  search = '';
+
+  roles: Role[] = [
+    {
+      id:1,
+      roleName:'Administrator',
+      description:'Full system access',
+      isActive:true,
+      createdDate:new Date()
+    },
+    {
+      id:2,
+      roleName:'Doctor',
+      description:'Manage patients',
+      isActive:true,
+      createdDate:new Date()
+    },
+    {
+      id:3,
+      roleName:'Receptionist',
+      description:'Appointment Management',
+      isActive:false,
+      createdDate:new Date()
+    }
+  ];
+
+  get filteredRoles(){
+    return this.roles.filter(x =>
+      x.roleName.toLowerCase().includes(this.search.toLowerCase()));
+  }
+
+  addRole(){
+    alert('Add Role');
+  }
+
+  edit(role:Role){
+    alert(role.roleName);
+  }
+
+  delete(role:Role){
+    if(confirm('Delete this role?')){
+      this.roles=this.roles.filter(x=>x.id!=role.id);
+    }
+  }
+
 }
 
 
