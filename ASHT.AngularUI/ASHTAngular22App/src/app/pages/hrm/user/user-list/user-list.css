@@ -1,0 +1,82 @@
+.page-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:25px;
+
+}
+
+.page-header h2{
+
+    font-weight:700;
+
+}
+
+.stats-card{
+
+    border:none;
+
+    border-radius:12px;
+
+    box-shadow:0 3px 12px rgba(0,0,0,.08);
+
+}
+
+.stats-card h6{
+
+    color:#6c757d;
+
+}
+
+.stats-card h2{
+
+    font-weight:bold;
+
+    margin-top:10px;
+
+}
+
+.card{
+
+    border:none;
+
+    border-radius:12px;
+
+}
+
+.table thead{
+
+    background:#f8f9fa;
+
+}
+
+.table td,
+.table th{
+
+    vertical-align:middle;
+
+}
+
+.btn{
+
+    border-radius:8px;
+
+}
+
+.badge{
+
+    padding:8px 12px;
+
+    font-size:12px;
+
+}
+
+.form-control{
+
+    border-radius:10px;
+
+}

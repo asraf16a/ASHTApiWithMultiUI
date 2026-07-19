@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UserListComponent } from './user-list';
+import { RolePrivilegeList } from './role-privilege-list';
 
-describe('UserList', () => {
-  let component: UserListComponent;
-  let fixture: ComponentFixture<UserListComponent>;
+describe('RolePrivilegeList', () => {
+  let component: RolePrivilegeList;
+  let fixture: ComponentFixture<RolePrivilegeList>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [UserListComponent],
+      imports: [RolePrivilegeList],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(UserListComponent);
+    fixture = TestBed.createComponent(RolePrivilegeList);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

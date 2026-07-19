@@ -4,9 +4,10 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout';
 
 import { RoleComponent } from './pages/hrm/role/role';
 import { UserComponent } from './pages/hrm/user/user';
-import { RolePrivilegeComponent } from './pages/hrm/role-privilege/role-privilege';
+
 import { CategoryComponent } from './pages/inventory/category/category';
 import { SubcategoryComponent } from './pages/inventory/subcategory/subcategory';
+import { RolePrivilegeComponent } from './pages/hrm/roleprivilege/role-privilege/role-privilege';
 
 export const routes: Routes = [
 

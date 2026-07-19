@@ -1,0 +1,83 @@
+.page-header{
+
+    margin-bottom:25px;
+
+}
+
+.page-header h2{
+
+    font-weight:700;
+
+}
+
+.card{
+
+    border:none;
+
+    border-radius:15px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+
+}
+
+.card-body{
+
+    padding:30px;
+
+}
+
+.form-label{
+
+    font-weight:600;
+
+    margin-bottom:8px;
+
+}
+
+.form-control,
+.form-select{
+
+    border-radius:10px;
+
+    min-height:45px;
+
+}
+
+.form-control:focus,
+.form-select:focus{
+
+    box-shadow:none;
+
+    border-color:#0d6efd;
+
+}
+
+.form-check-input{
+
+    width:20px;
+
+    height:20px;
+
+}
+
+.form-check-label{
+
+    margin-left:8px;
+
+    font-weight:500;
+
+}
+
+.btn{
+
+    min-width:130px;
+
+    border-radius:8px;
+
+}
+
+.text-end{
+
+    margin-top:20px;
+
+}

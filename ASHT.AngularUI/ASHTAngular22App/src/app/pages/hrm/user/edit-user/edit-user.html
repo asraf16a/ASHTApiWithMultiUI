@@ -1,1 +1,168 @@
-<p>edit-user works!</p>
+<div class="page-header">
+
+    <div>
+
+        <h2>
+
+            <i class="bi bi-pencil-square text-primary"></i>
+
+            Edit User
+
+        </h2>
+
+        <p class="text-muted">
+
+            Update existing user information
+
+        </p>
+
+    </div>
+
+</div>
+
+<div class="card shadow-sm">
+
+    <div class="card-body">
+
+        <form
+            [formGroup]="userForm"
+            (ngSubmit)="update()">
+
+            <div class="row">
+
+                <div class="col-md-6 mb-3">
+
+                    <label class="form-label">
+
+                        Username
+
+                    </label>
+
+                    <input
+                        class="form-control"
+                        formControlName="username">
+
+                </div>
+
+                <div class="col-md-6 mb-3">
+
+                    <label class="form-label">
+
+                        User Type
+
+                    </label>
+
+                    <select
+                        class="form-select"
+                        formControlName="userTypeId">
+
+                        <option [ngValue]="null">
+
+                            Select User Type
+
+                        </option>
+
+                        <option
+                            *ngFor="let item of userTypes"
+                            [value]="item.id">
+
+                            {{item.name}}
+
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-6 mb-3">
+
+                    <label class="form-label">
+
+                        New Password
+
+                    </label>
+
+                    <input
+                        type="password"
+                        class="form-control"
+                        formControlName="password"
+                        placeholder="Leave blank if unchanged">
+
+                </div>
+
+                <div class="col-md-6 mb-3">
+
+                    <label class="form-label">
+
+                        Confirm Password
+
+                    </label>
+
+                    <input
+                        type="password"
+                        class="form-control"
+                        formControlName="confirmPassword">
+
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-4">
+
+                    <div class="form-check mt-3">
+
+                        <input
+                            class="form-check-input"
+                            type="checkbox"
+                            formControlName="isActive">
+
+                        <label class="form-check-label">
+
+                            Active User
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <hr>
+
+            <div class="text-end">
+
+                <button
+                    type="button"
+                    class="btn btn-secondary me-2"
+                    (click)="cancel()">
+
+                    <i class="bi bi-arrow-left-circle"></i>
+
+                    Back
+
+                </button>
+
+                <button
+                    type="submit"
+                    class="btn btn-primary">
+
+                    <i class="bi bi-check-circle"></i>
+
+                    Update User
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
