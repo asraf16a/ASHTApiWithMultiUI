@@ -27,7 +27,7 @@ export class UserService {
   getAllUserList(): Observable<User[]> {
 
     return this.http
-      .get<ApiResponse>(`${this.apiUrl}/All`)
+      .get<ApiResponse>(`${this.apiUrl}/GetAllUserList`)
       .pipe(
         map(response => {
           if (!response?.data) {

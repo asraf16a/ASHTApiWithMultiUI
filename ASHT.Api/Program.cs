@@ -10,14 +10,14 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddApplicationServices();
 builder.Services.AddInfrastructureServices(builder.Configuration);
-
+builder.Services.AddDbContext<ASHTDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("ASHTApiWithMultiUIDB")));
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(Assembly.GetExecutingAssembly()));
 
 
-builder.Services.AddDbContext<ASHTDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("ASHTApiWithMultiUIDB")));
+
 //builder.Services.AddControllers();
 //Swagger config
 var myNamedPolicy = "_myAllowMultiClientOrigins";
