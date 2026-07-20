@@ -40,7 +40,7 @@ namespace ASHT.Infrastructure.Services
             return await _context.Users.FirstOrDefaultAsync(u => u.Username == username, cancellationToken);
         }
 
-        public async Task<List<User>> GetAllUsersAsync(CancellationToken cancellationToken)
+        public async Task<List<User>> GetAllUsersAsync(int companyId, CancellationToken cancellationToken)
         {
             return await _context.Users.ToListAsync(cancellationToken);
         }

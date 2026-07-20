@@ -3,11 +3,12 @@ import { Injectable, inject } from '@angular/core';
 
 import { HttpClient } from '@angular/common/http';
 
-import { Observable } from 'rxjs';
+import { Observable,map } from 'rxjs';
 
 import { User } from '../models/user';
 
 import { environment } from '../../../environments/environment';
+import { ApiResponse } from '../models/api-response';
 
 @Injectable({
 
@@ -18,15 +19,26 @@ export class UserService {
 
   private http = inject(HttpClient);
 
-  private apiUrl = `${environment.apiUrl}/users`;
+  private apiUrl = `${environment.apiUrl}/user`;
+
+  constructor() { }
 
   // Get All Users
+  getAllUserList(): Observable<User[]> {
 
-  getUsers(): Observable<User[]> {
+    return this.http
+      .get<ApiResponse>(`${this.apiUrl}/GetAllUserList`)
+      .pipe(
+        map(response => {
+          if (!response?.data) {
+            return [];
+          }
 
-    return this.http.get<User[]>(this.apiUrl);
-
+          return response.data as User[];
+        })
+      );
   }
+
 
   // Get User By Id
 

@@ -6,7 +6,7 @@ namespace ASHT.Domain.Interface
     {
         Task<User> AddAsync(User user, CancellationToken cancellationToken);
 
-        Task<List<User>> GetAllUsersAsync(CancellationToken cancellationToken);
+        Task<List<User>> GetAllUsersAsync(int companyId, CancellationToken cancellationToken);
 
         Task<User?> GetByIdAsync(int id, CancellationToken cancellationToken);
 

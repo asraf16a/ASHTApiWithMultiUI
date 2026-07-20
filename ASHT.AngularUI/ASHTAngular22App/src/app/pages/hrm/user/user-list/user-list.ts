@@ -1,104 +1,66 @@
-
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
+
 import { User } from '../../../../shared/models/user';
-
-
+import { UserService } from '../../../../shared/services/user-service';
 
 @Component({
   selector: 'app-user-list',
   standalone: true,
-  imports: [
-    CommonModule,
-    FormsModule
-  ],
+  imports: [CommonModule, FormsModule],
   templateUrl: './user-list.html',
   styleUrl: './user-list.css'
 })
+export class UserListComponent implements OnInit {
 
- 
-export class UserListComponent {
-@Output() addClicked = new EventEmitter<void>();
+  @Output() addClicked = new EventEmitter<void>();
+  @Output() editClicked = new EventEmitter<number>();
 
-@Output() editClicked = new EventEmitter<number>();
   searchText = '';
+  users: User[] = [];
 
- 
-  users: User[] = [
+  constructor(
+    private router: Router,
+    private userService: UserService
+  ) {}
 
-    {
-      id:1,
-      username:'admin',
-      password:'********',
-      passwordSalt:'SALT001',
-      userTypeId:1,
-      isActive:true,
-      isDeleted:false,
-      createdDate:new Date('2026-01-01'),
-      modifiedDate:new Date('2026-07-01')
-    },
+  ngOnInit(): void {
+    this.loadUsers();
+  }
 
-    {
-      id:2,
-      username:'doctor',
-      password:'********',
-      passwordSalt:'SALT002',
-      userTypeId:2,
-      isActive:true,
-      isDeleted:false,
-      createdDate:new Date('2026-01-05'),
-      modifiedDate:new Date('2026-07-02')
-    },
-
-    {
-      id:3,
-      username:'reception',
-      password:'********',
-      passwordSalt:'SALT003',
-      userTypeId:3,
-      isActive:false,
-      isDeleted:false,
-      createdDate:new Date('2026-02-01'),
-      modifiedDate:new Date('2026-07-10')
-    }
-
-  ];
+  loadUsers(): void {
+    this.userService.getAllUserList().subscribe({
+      next: users => this.users = users,
+      error: err => {
+        console.error(err);
+        this.users = [];
+      }
+    });
+  }
 
   get totalUsers(): number {
-
     return this.users.length;
-
   }
 
   get activeUsers(): number {
-
-    return this.users.filter(x=>x.isActive).length;
-
+    return this.users.filter(x => x.isActive).length;
   }
 
   get inactiveUsers(): number {
-
-    return this.users.filter(x=>!x.isActive).length;
-
+    return this.users.filter(x => !x.isActive).length;
   }
 
-  addUser(){
-
-    alert('Add User');
-
+  addUser(): void {
+    this.addClicked.emit();
   }
 
-  editUser(user:User){
-
-    alert('Edit : '+user.username);
-
+  editUser(user: User): void {
+    this.editClicked.emit(user.id);
   }
 
-  deleteUser(user:User){
-
-    alert('Delete : '+user.username);
-
+  deleteUser(user: User): void {
+    console.log('Delete', user);
   }
-
 }
