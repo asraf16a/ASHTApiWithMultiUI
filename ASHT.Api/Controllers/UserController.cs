@@ -56,8 +56,7 @@ namespace ASHT.Api.Controllers
         }
 
         //query to get all users
-        [HttpGet]
-        [Route("All", Name = "GetAllUserList")]
+        [HttpGet("GetAllUserList")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
