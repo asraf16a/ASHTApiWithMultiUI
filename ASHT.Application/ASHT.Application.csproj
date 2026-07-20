@@ -9,7 +9,6 @@
   <ItemGroup>
     <Folder Include="Account\" />
     <Folder Include="Hrm\RolePrivilege\Queries\" />
-    <Folder Include="Hrm\User\Queries\" />
     <Folder Include="Medical\Appointment\Queries\" />
     <Folder Include="Medical\PrescriptionDetail\Commands\" />
     <Folder Include="Medical\PrescriptionDetail\Queries\" />

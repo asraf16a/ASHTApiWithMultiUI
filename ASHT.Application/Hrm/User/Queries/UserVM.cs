@@ -1,9 +1,6 @@
-﻿using ASHT.Application.Hrm.User.Queries;
-using MediatR;
-
-namespace ASHT.Application.Hrm.User.Commands.Create
+﻿namespace ASHT.Application.Hrm.User.Queries
 {
-    public class CreateUserCommand : IRequest<UserVM>
+    public class UserVM
     {
         public int Id { get; set; }
         public string Username { get; set; }

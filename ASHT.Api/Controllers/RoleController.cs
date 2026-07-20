@@ -20,8 +20,7 @@ namespace ASHT.Api.Controllers
             _apiResponse = new APIResponse();
         }
 
-        [HttpPost]
-        [Route("Create")]
+        [HttpPost("Add")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
