@@ -27,7 +27,8 @@ export class UserComponent {
   users = [
     { id: 1, isActive: true },
     { id: 2, isActive: true },
-    { id: 3, isActive: false }
+    { id: 3, isActive: false },
+    { id: 4, isActive: true }
   ];
 
   get totalUsers() {

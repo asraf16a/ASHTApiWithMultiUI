@@ -1,9 +1,8 @@
 
-import { Component, Output } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { User } from '../../../../shared/models/user';
-import { EventEmitter } from 'stream';
 
 
 
@@ -17,13 +16,15 @@ import { EventEmitter } from 'stream';
   templateUrl: './user-list.html',
   styleUrl: './user-list.css'
 })
+
+ 
 export class UserListComponent {
-
-  searchText = '';
-
-  @Output() addClicked = new EventEmitter<void>();
+@Output() addClicked = new EventEmitter<void>();
 
 @Output() editClicked = new EventEmitter<number>();
+  searchText = '';
+
+ 
   users: User[] = [
 
     {

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -15,6 +15,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class EditUserComponent implements OnInit {
 
+   @Input() userIdInput!: number;
   userForm!: FormGroup;
 
   userId = 0;
