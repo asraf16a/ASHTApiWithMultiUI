@@ -1,4 +1,5 @@
-﻿using ASHT.SharedKarnel.Dto;
+﻿using ASHT.Application.Hrm.UserType.Query;
+using ASHT.SharedKarnel.Dto;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;

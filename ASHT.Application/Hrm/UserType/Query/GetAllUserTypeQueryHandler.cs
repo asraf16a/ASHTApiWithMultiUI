@@ -1,4 +1,5 @@
-﻿using MediatR;
+﻿using ASHT.Domain.Interface;
+using MediatR;
 
 namespace ASHT.Application.Hrm.UserType.Query
 {
@@ -19,11 +20,8 @@ namespace ASHT.Application.Hrm.UserType.Query
             return userTypes.Select(userType => new UserTypeVM
             {
                 Id = userType.Id,
-                UserTypeName = userType.UserTypeName,
-                Description = userType.Description,
-                IsActive = userType.IsActive,
-                CreatedDate = userType.CreatedDate,
-                ModifiedDate = userType.ModifiedDate
+                Name = userType.Name,
+
             }).ToList();
         }
     }

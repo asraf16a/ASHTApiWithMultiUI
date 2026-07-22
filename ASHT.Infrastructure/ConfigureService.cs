@@ -13,6 +13,7 @@ namespace ASHT.Infrastructure
 
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IRoleService, RoleService>();
+            services.AddScoped<IUserTypeService, UserTypeService>();
 
             services.AddScoped<IRolePrivilegeService, RolePrivilegeService>();
 
