@@ -56,7 +56,7 @@ namespace ASHT.Infrastructure.Services
                     CreatedDate = u.CreatedDate,
                     ModifiedDate = u.ModifiedDate
                 })
-                .OrderBy(u => u.Username)
+                .OrderByDescending(u => u.Id)
                 .ToListAsync(cancellationToken);
         }
     }

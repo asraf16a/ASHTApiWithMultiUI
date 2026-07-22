@@ -2,7 +2,7 @@
 
 namespace ASHT.Application.Hrm.Role.Queries
 {
-    public class GetRoleQuery : IRequest<RoleVM>
+    public class GetRoleQuery : IRequest<List<RoleVM>>
     {
 
     }

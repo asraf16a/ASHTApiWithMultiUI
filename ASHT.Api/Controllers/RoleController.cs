@@ -54,18 +54,18 @@ namespace ASHT.Api.Controllers
 
         }
 
-        [HttpGet]
-        [Route("All", Name = "GetAllRoles")]
+
+        [HttpGet("GetAllRoles")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(StatusCodes.Status403Forbidden)]
-        public async Task<ActionResult<APIResponse>> GetRolesAsync(GetRoleQuery query)
+        public async Task<ActionResult<APIResponse>> GetRolesAsync()
         {
             try
             {
-                var result = await _mediator.Send(query);
+                var result = await _mediator.Send(new GetRoleQuery());
                 _apiResponse.Data = result;
                 _apiResponse.Status = true;
                 _apiResponse.StatusCode = HttpStatusCode.OK;
