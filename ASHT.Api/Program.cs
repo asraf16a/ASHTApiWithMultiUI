@@ -16,10 +16,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(Assembly.GetExecutingAssembly()));
 
-
-
-//builder.Services.AddControllers();
-//Swagger config
+//CORS config
 var myNamedPolicy = "_myAllowMultiClientOrigins";
 
 builder.Services.AddCors(options =>
@@ -33,6 +30,7 @@ builder.Services.AddCors(options =>
     });
 });
 
+
 var app = builder.Build();
 
 
@@ -43,10 +41,17 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseRouting();
+
+// Enable CORS
+app.UseCors(myNamedPolicy);
+
+app.UseAuthentication(); // if authentication is configured
 
 app.UseAuthorization();
 
 app.MapControllers();
+
 
 //using (var serviceScope = app.Services.GetRequiredService<IServiceScopeFactory>().CreateScope())
 //{

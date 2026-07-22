@@ -1,6 +1,6 @@
-﻿namespace ASHT.Application.Hrm.User.Queries
+﻿namespace ASHT.Domain.DataModels
 {
-    public class UserVM
+    public class UserModel
     {
         public int Id { get; set; }
         public string Username { get; set; }

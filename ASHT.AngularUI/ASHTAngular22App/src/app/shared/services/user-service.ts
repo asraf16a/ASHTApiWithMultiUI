@@ -21,21 +21,40 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
+  
   getAllUserList(): Observable<User[]> {
 
-    return this.http
-      .get<ApiResponse<User[]>>(`${this.apiUrl}/GetAllUserList`)
-      .pipe(
-        map((response: ApiResponse<User[]>) => {
+  return this.http.get<any>(`${this.apiUrl}/GetAllUserList`).pipe(
 
-          if (!response.status) {
-            throw new Error(response.errors?.join(', ') || 'Failed to load users.');
-          }
+    map(res => {
 
-          return response.data ?? [];
-        })
-      );
-  }
+      console.log('Entire Response:', res);
+      console.log('Data:', res.data);
+
+      return res.data;
+
+    })
+
+  );
+
+}
+
+  // getAllUserList(): Observable<User[]> {
+
+  //   return this.http
+  //     .get<ApiResponse<User[]>>(`${this.apiUrl}/GetAllUserList`)
+  //     .pipe(
+  //       map((response: ApiResponse<User[]>) => {
+
+  //         if (!response.status) {
+  //           throw new Error(response.errors?.join(', ') || 'Failed to load users.');
+  //         }
+  //      console.log('Service Response:', response);
+  //       console.log('Service Data:', response.data);
+  //         return response.data ?? [];
+  //       })
+  //     );
+  // }
 
 
   // Get User By Id

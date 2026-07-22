@@ -1,6 +1,6 @@
-﻿namespace ASHT.Application.Hrm.User.Queries
+﻿namespace ASHT.SharedKarnel.Dto
 {
-    public class UserVM
+    public class UserDto
     {
         public int Id { get; set; }
         public string Username { get; set; }

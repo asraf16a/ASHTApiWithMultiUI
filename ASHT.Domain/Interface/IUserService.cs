@@ -1,4 +1,5 @@
-﻿using ASHT.Domain.Entities.Hrm;
+﻿using ASHT.Domain.DataModels;
+using ASHT.Domain.Entities.Hrm;
 
 namespace ASHT.Domain.Interface
 {
@@ -6,7 +7,7 @@ namespace ASHT.Domain.Interface
     {
         Task<User> AddAsync(User user, CancellationToken cancellationToken);
 
-        Task<List<User>> GetAllUsersAsync(CancellationToken cancellationToken);
+        Task<List<UserModel>> GetAllUsersAsync(CancellationToken cancellationToken);
 
         Task<User?> GetByIdAsync(int id, CancellationToken cancellationToken);
 

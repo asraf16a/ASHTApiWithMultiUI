@@ -29,11 +29,8 @@ namespace ASHT.Application.Hrm.User.Commands.Create
             var createdUser = await _userService.AddAsync(user, cancellationToken);
             return new UserVM
             {
-                Id = createdUser.Id,
                 Username = createdUser.Username,
-                Password = createdUser.Password,
-                PasswordSalt = createdUser.PasswordSalt,
-                UserTypeId = createdUser.UserTypeId,
+                UserTypeName = createdUser.UserType.Name,
                 IsActive = createdUser.IsActive,
                 IsDeleted = createdUser.IsDeleted,
                 CreatedDate = createdUser.CreatedDate,

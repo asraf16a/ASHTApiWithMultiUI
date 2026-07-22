@@ -1,13 +1,8 @@
 export interface User {
-
   id: number;
   username: string;
-  password: string;
-  passwordSalt: string;
-  userTypeId: number;
+  userTypeName: string;
   isActive: boolean;
-  isDeleted: boolean;
-  createdDate: Date;
-  modifiedDate: Date;
-
+  createdDate: string;
+  modifiedDate: string;
 }

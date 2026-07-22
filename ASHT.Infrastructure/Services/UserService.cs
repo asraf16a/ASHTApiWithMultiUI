@@ -1,4 +1,5 @@
-﻿using ASHT.Domain.Entities.Hrm;
+﻿using ASHT.Domain.DataModels;
+using ASHT.Domain.Entities.Hrm;
 using ASHT.Domain.Interface;
 using ASHT.Persistent;
 using Microsoft.EntityFrameworkCore;
@@ -40,9 +41,23 @@ namespace ASHT.Infrastructure.Services
             return await _context.Users.FirstOrDefaultAsync(u => u.Username == username, cancellationToken);
         }
 
-        public async Task<List<User>> GetAllUsersAsync(CancellationToken cancellationToken)
+
+        public async Task<List<UserModel>> GetAllUsersAsync(CancellationToken cancellationToken)
         {
-            return await _context.Users.ToListAsync(cancellationToken);
+            return await _context.Users
+                .Where(u => !u.IsDeleted)
+                .Select(u => new UserModel
+                {
+                    Id = u.Id,
+                    Username = u.Username,
+                    UserTypeId = u.UserTypeId,
+                    UserTypeName = u.UserType.Name,
+                    IsActive = u.IsActive,
+                    CreatedDate = u.CreatedDate,
+                    ModifiedDate = u.ModifiedDate
+                })
+                .OrderBy(u => u.Username)
+                .ToListAsync(cancellationToken);
         }
     }
 }
