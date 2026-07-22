@@ -17,24 +17,22 @@ import { ApiResponse } from '../models/api-response';
 })
 export class UserService {
 
-  private http = inject(HttpClient);
+   private apiUrl = `${environment.apiUrl}/User`;
 
-  private apiUrl = `${environment.apiUrl}/user`;
+  constructor(private http: HttpClient) { }
 
-  constructor() { }
-
-  // Get All Users
   getAllUserList(): Observable<User[]> {
 
     return this.http
-      .get<ApiResponse>(`${this.apiUrl}/GetAllUserList`)
+      .get<ApiResponse<User[]>>(`${this.apiUrl}/GetAllUserList`)
       .pipe(
-        map(response => {
-          if (!response?.data) {
-            return [];
+        map((response: ApiResponse<User[]>) => {
+
+          if (!response.status) {
+            throw new Error(response.errors?.join(', ') || 'Failed to load users.');
           }
 
-          return response.data as User[];
+          return response.data ?? [];
         })
       );
   }

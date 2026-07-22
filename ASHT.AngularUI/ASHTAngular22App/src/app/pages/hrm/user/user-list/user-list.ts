@@ -31,14 +31,21 @@ export class UserListComponent implements OnInit {
   }
 
   loadUsers(): void {
-    this.userService.getAllUserList().subscribe({
-      next: users => this.users = users,
-      error: err => {
-        console.error(err);
-        this.users = [];
-      }
-    });
-  }
+
+  this.userService.getAllUserList().subscribe({
+
+    next: (users: User[]) => {
+      this.users = users;
+    },
+
+    error: (err) => {
+      console.error(err);
+      this.users = [];
+    }
+
+  });
+
+}
 
   get totalUsers(): number {
     return this.users.length;

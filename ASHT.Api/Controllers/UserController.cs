@@ -62,11 +62,11 @@ namespace ASHT.Api.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(StatusCodes.Status403Forbidden)]
-        public async Task<ActionResult<APIResponse>> GetUsersAsync(int companyId)
+        public async Task<ActionResult<APIResponse>> GetUsersAsync()
         {
             try
             {
-                var result = await _mediator.Send(new GetAllUserQuery() { CompanyId = companyId });
+                var result = await _mediator.Send(new GetAllUserQuery());
                 _apiResponse.Data = result;
                 _apiResponse.Status = true;
                 _apiResponse.StatusCode = HttpStatusCode.OK;

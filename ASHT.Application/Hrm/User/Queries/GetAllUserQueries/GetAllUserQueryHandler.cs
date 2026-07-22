@@ -13,7 +13,7 @@ namespace ASHT.Application.Hrm.User.Queries.GetAllUserQueries
 
         public async Task<List<UserVM>> Handle(GetAllUserQuery request, CancellationToken cancellationToken)
         {
-            var users = await _userService.GetAllUsersAsync(request.CompanyId, cancellationToken);
+            var users = await _userService.GetAllUsersAsync(cancellationToken);
             return MapToUserVM(users);
         }
 

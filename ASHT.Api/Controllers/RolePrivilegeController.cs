@@ -1,5 +1,4 @@
-﻿using ASHT.Application.Hrm.Role.Commands.Create;
-using ASHT.Application.Hrm.RolePrivilege.Commands.Create;
+﻿using ASHT.Application.Hrm.RolePrivilege.Commands.Create;
 using ASHT.SharedKarnel.Dto;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
