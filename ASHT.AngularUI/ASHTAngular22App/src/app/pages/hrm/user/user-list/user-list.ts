@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -23,7 +23,8 @@ export class UserListComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private userService: UserService
+    private userService: UserService,
+    private cdr:ChangeDetectorRef
   ) {}
 
   ngOnInit(): void {
@@ -38,6 +39,7 @@ export class UserListComponent implements OnInit {
       console.log('Component Users:', users);
       console.log('Count:', users.length);
       this.users = users;
+      this.cdr.detectChanges();
     },
 
     error: (err) => {

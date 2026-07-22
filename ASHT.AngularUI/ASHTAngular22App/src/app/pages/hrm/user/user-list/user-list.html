@@ -121,7 +121,55 @@
 
                 <tbody>
 
-                <tr *ngFor="let user of users">                   
+                    <tr *ngFor="let user of users; let i = index">
+
+                    <td>{{ user.id}}</td>
+
+                    <strong>
+
+                            {{user.username}}
+
+                     </strong>
+
+                    <td>{{ user.userTypeName }}</td>
+
+                    <td>
+                         <span
+                            class="badge"
+                            [class.bg-success]="user.isActive"
+                            [class.bg-danger]="!user.isActive">
+
+                            {{user.isActive?'Active':'Inactive'}}
+
+                        </span>
+                    </td>
+
+                    <td>{{ user.createdDate | date:'dd-MMM-yyyy' }}</td>
+
+                    <td>{{ user.modifiedDate | date:'dd-MMM-yyyy' }}</td>
+
+                    <td>
+                        <button
+                            class="btn btn-outline-primary btn-sm me-2"
+                            (click)="editUser(user)">
+
+                            <i class="bi bi-pencil-square"></i>
+
+                        </button>
+
+                        <button
+                            class="btn btn-outline-danger btn-sm"
+                            (click)="deleteUser(user)">
+
+                            <i class="bi bi-trash"></i>
+
+                        </button>
+                    </td>
+
+            </tr>
+
+
+                <!-- <tr *ngFor="let user of users">                   
 
                     <td>{{user.id}}</td>
                     <td>
@@ -182,7 +230,7 @@
 
                     </td>
 
-                </tr>
+                </tr> -->
 
                 </tbody>
 
