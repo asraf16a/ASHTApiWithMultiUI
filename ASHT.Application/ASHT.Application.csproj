@@ -10,6 +10,8 @@
     <Folder Include="Account\" />
     <Folder Include="Hrm\RolePrivilege\Queries\" />
     <Folder Include="Medical\Appointment\Queries\" />
+    <Folder Include="Medical\Doctor\Queries\GetDoctorListByQuery\" />
+    <Folder Include="Medical\Patient\" />
     <Folder Include="Medical\PrescriptionDetail\Commands\" />
     <Folder Include="Medical\PrescriptionDetail\Queries\" />
   </ItemGroup>

@@ -1,8 +1,10 @@
 
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { UserTypeService } from '../../../../shared/services/user-type';
+import { UserType } from '../../../../shared/models/user-type';
 
 @Component({
   selector: 'app-add-user',
@@ -10,25 +12,31 @@ import { Router } from '@angular/router';
   imports: [
     CommonModule,
     ReactiveFormsModule
+    
   ],
   templateUrl: './add-user.html',
   styleUrl: './add-user.css'
 })
 export class AddUserComponent {
 
-  userForm: FormGroup;
+  userForm!: FormGroup;
 
-  userTypes = [
-    { id: 1, name: 'Administrator' },
-    { id: 2, name: 'Doctor' },
-    { id: 3, name: 'Receptionist' },
-    { id: 4, name: 'Patient' }
-  ];
+  userTypes:UserType[] = [ ];
 
   constructor(
+    private userTypeService:UserTypeService,
     private fb: FormBuilder,
-    private router: Router
-  ) {
+    private router: Router,
+    private cdr:ChangeDetectorRef
+  ) { }
+
+  ngOnInit(): void {
+    this.buildform();
+    this.loadUserTypes();
+    this.cdr.detectChanges();
+  }
+
+  buildform():void{
 
     this.userForm = this.fb.group({
 
@@ -44,6 +52,23 @@ export class AddUserComponent {
       userTypeId: [null, Validators.required],
 
       isActive: [true]
+
+    });
+  }
+
+  loadUserTypes(): void {
+
+    this.userTypeService.getAllUserTypes().subscribe({
+
+      next: (userTypes:UserType[]) => {
+
+        this.userTypes = userTypes;
+        this.cdr.detectChanges();
+      },
+
+      error: (err) => {
+        console.error(err);
+      }
 
     });
 

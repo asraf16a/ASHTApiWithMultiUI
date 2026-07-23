@@ -36,6 +36,10 @@ namespace ASHT.Persistent
 
         public DbSet<UserType> UserTypes { get; set; }
 
+        public DbSet<Doctor> Doctors { get; set; }
+
+        public DbSet<Patient> Patients { get; set; }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             //User Related table configuration

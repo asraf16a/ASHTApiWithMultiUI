@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 
 import { User } from '../../../../shared/models/user';
 import { UserService } from '../../../../shared/services/user-service';
+import { UserTypeService } from '../../../../shared/services/user-type';
 
 @Component({
   selector: 'app-user-list',
@@ -36,8 +37,7 @@ export class UserListComponent implements OnInit {
   this.userService.getAllUserList().subscribe({
 
     next: (users: User[]) => {
-      console.log('Component Users:', users);
-      console.log('Count:', users.length);
+     
       this.users = users;
       this.cdr.detectChanges();
     },

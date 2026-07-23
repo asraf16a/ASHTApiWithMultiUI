@@ -26,36 +26,13 @@ export class UserService {
 
   return this.http.get<any>(`${this.apiUrl}/GetAllUserList`).pipe(
 
-    map(res => {
-
-      console.log('Entire Response:', res);
-      console.log('Data:', res.data);
-
+    map(res => {    
       return res.data;
-
     })
 
   );
 
 }
-
-  // getAllUserList(): Observable<User[]> {
-
-  //   return this.http
-  //     .get<ApiResponse<User[]>>(`${this.apiUrl}/GetAllUserList`)
-  //     .pipe(
-  //       map((response: ApiResponse<User[]>) => {
-
-  //         if (!response.status) {
-  //           throw new Error(response.errors?.join(', ') || 'Failed to load users.');
-  //         }
-  //      console.log('Service Response:', response);
-  //       console.log('Service Data:', response.data);
-  //         return response.data ?? [];
-  //       })
-  //     );
-  // }
-
 
   // Get User By Id
 
