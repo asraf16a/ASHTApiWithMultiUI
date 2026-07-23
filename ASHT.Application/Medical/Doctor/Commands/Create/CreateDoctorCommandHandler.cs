@@ -42,7 +42,13 @@ namespace ASHT.Application.Medical.Doctor.Commands.Create
                 Email = doctor.Email,
                 Specialization = doctor.Specialization,
                 Qualifications = doctor.Qualifications,
-                Gender = doctor.Gender
+                Gender = doctor.Gender,
+                DateOfBirth = doctor.DateOfBirth,
+                YearsOfExperience = doctor.YearsOfExperience,
+                LicenseNumber = doctor.LicenseNumber,
+                Department = doctor.Department,
+                WorkingHours = doctor.WorkingHours,
+                Status = doctor.Status
             };
         }
     }

@@ -20,7 +20,7 @@ namespace ASHT.Infrastructure.Services
             return doctor;
         }
 
-        public async Task<List<Doctor>> GetDoctorList()
+        public async Task<List<Doctor>> GetDoctorListAsync()
         {
             var doctors = await _context.Doctors.ToListAsync();
             return doctors;
