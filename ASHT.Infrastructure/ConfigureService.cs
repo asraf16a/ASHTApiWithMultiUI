@@ -9,19 +9,19 @@ namespace ASHT.Infrastructure
     {
         public static IServiceCollection AddInfrastructureServices(this IServiceCollection services, IConfiguration configuration)
         {
-
-
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IRoleService, RoleService>();
             services.AddScoped<IUserTypeService, UserTypeService>();
-
             services.AddScoped<IRolePrivilegeService, RolePrivilegeService>();
 
             services.AddScoped<ICategoryService, CategoryService>();
             services.AddScoped<ISubCategoryService, SubCategoryService>();
             services.AddScoped<IProductService, ProductService>();
+
             services.AddScoped<IPrescriptionDetailService, PrescriptionDetailService>();
             services.AddScoped<IAppointmentService, AppointmentService>();
+            services.AddScoped<IDoctorService, DoctorService>();
+            services.AddScoped<IPatientService, PatientService>();
 
             return services;
         }
