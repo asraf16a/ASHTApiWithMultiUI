@@ -46,7 +46,7 @@ export class SidebarComponent {
         {
           title: 'Role Privileges',
           icon: 'bi-key',
-          route: '/role-privileges'
+          route: '/role-privilege'
         }
       ]
     },
@@ -58,17 +58,17 @@ export class SidebarComponent {
         {
           title: 'Category',
           icon: 'bi-folder',
-          route: '/categories'
+          route: '/category'
         },
         {
           title: 'Sub Category',
           icon: 'bi-folder2-open',
-          route: '/subcategories'
+          route: '/subcategory'
         },
         {
           title: 'Products',
           icon: 'bi-box',
-          route: '/products'
+          route: '/product'
         },
         {
           title: 'Product Pricing',

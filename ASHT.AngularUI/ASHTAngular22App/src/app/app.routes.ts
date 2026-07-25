@@ -8,6 +8,7 @@ import { UserComponent } from './pages/hrm/user/user';
 import { CategoryComponent } from './pages/inventory/category/category';
 import { SubcategoryComponent } from './pages/inventory/subcategory/subcategory';
 import { RolePrivilegeComponent } from './pages/hrm/roleprivilege/role-privilege/role-privilege';
+import { ProductComponent } from './pages/inventory/product/product';
 
 export const routes: Routes = [
 
@@ -33,7 +34,7 @@ export const routes: Routes = [
         component: UserComponent
       },
       {
-        path:'rolePrivilege',
+        path:'role-privilege',
         component:RolePrivilegeComponent
       },
       {
@@ -41,8 +42,12 @@ export const routes: Routes = [
         component:CategoryComponent
       },
       {
-        path:'subCategory',
+        path:'subcategory',
         component:SubcategoryComponent
+      },
+      {
+        path:'product',
+        component:ProductComponent
       }
 
     ]
