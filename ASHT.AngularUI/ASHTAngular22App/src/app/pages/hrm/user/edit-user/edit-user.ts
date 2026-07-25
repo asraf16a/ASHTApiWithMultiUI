@@ -1,7 +1,9 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit,Input, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { UserTypeService } from '../../../../shared/services/user-type';
+import { UserType } from '../../../../shared/models/user-type';
 
 @Component({
   selector: 'app-edit-user',
@@ -19,18 +21,14 @@ export class EditUserComponent implements OnInit {
   userForm!: FormGroup;
 
   userId = 0;
-
-  userTypes = [
-    { id: 1, name: 'Administrator' },
-    { id: 2, name: 'Doctor' },
-    { id: 3, name: 'Receptionist' },
-    { id: 4, name: 'Patient' }
-  ];
+  userTypes:UserType[] = [ ];
 
   constructor(
+    private userTypeService:UserTypeService,
     private fb: FormBuilder,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private cdr:ChangeDetectorRef
   ) {}
 
   ngOnInit(): void {
@@ -65,6 +63,24 @@ export class EditUserComponent implements OnInit {
     });
 
   }
+  loadUserTypes(): void {
+  
+      this.userTypeService.getAllUserTypes().subscribe({
+  
+        next: (userTypes:UserType[]) => {
+  
+          this.userTypes = userTypes;
+          this.cdr.detectChanges();
+        },
+  
+        error: (err) => {
+          console.error(err);
+        }
+  
+      });
+  
+    }
+  
 
   update(): void {
 

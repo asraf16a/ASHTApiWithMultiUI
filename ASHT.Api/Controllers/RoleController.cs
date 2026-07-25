@@ -55,7 +55,7 @@ namespace ASHT.Api.Controllers
         }
 
 
-        [HttpGet("GetAllRoles")]
+        [HttpGet("GetAllRoleList")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]

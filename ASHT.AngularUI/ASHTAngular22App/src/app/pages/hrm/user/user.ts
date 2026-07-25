@@ -24,25 +24,6 @@ export class UserComponent {
 
   selectedUserId = 0;
 
-  users = [
-    { id: 1, isActive: true },
-    { id: 2, isActive: true },
-    { id: 3, isActive: false },
-    { id: 4, isActive: true }
-  ];
-
-  get totalUsers() {
-    return this.users.length;
-  }
-
-  get activeUsers() {
-    return this.users.filter(x => x.isActive).length;
-  }
-
-  get inactiveUsers() {
-    return this.users.filter(x => !x.isActive).length;
-  }
-
   addUser() {
     this.currentPage = 'add';
   }

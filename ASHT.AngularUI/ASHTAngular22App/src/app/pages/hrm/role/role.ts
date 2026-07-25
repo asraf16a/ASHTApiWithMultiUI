@@ -1,81 +1,58 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
-import { CommonModule, DatePipe } from '@angular/common';
-import { FormsModule,ReactiveFormsModule } from '@angular/forms';
-import { Role } from '../../../shared/models/role';
-
+import { RoleListComponent } from './role-list/role-list';
+import { AddRoleComponent } from './add-role/add-role';
+import { EditRoleComponent } from './edit-role/edit-role';
 
 @Component({
   selector: 'app-role',
   standalone: true,
-  imports: [CommonModule,FormsModule,ReactiveFormsModule],
+  imports: [
+    CommonModule,
+    RoleListComponent,
+    AddRoleComponent,
+    EditRoleComponent
+  ],
   templateUrl: './role.html',
-  styleUrl: './role.css',
+  styleUrl: './role.css'
 })
 export class RoleComponent {
 
-  roleForm: FormGroup;
+  currentPage: 'list' | 'add' | 'edit' = 'list';
 
-  constructor(private fb: FormBuilder) {
-    this.roleForm = this.fb.group({
-      roleName: ['', [Validators.required, Validators.minLength(3)]],
-      description: [''],
-      isActive: [true]
-    });
+  selectedRoleId = 0;
+
+  // roles = [
+  //   { id: 1, roleName: 'Admin', description: 'Full access', isActive: true, isDeleted: false },
+  //   { id: 2, roleName: 'Editor', description: 'Can edit content', isActive: true, isDeleted: false },
+  //   { id: 3, roleName: 'Viewer', description: 'Read-only access', isActive: false, isDeleted: false },
+  //   { id: 4, roleName: 'Manager', description: 'Manages team', isActive: true, isDeleted: false }
+  // ];
+
+  // get totalRoles() {
+  //   return this.roles.length;
+  // }
+
+  // get activeRoles() {
+  //   return this.roles.filter(x => x.isActive).length;
+  // }
+
+  // get inactiveRoles() {
+  //   return this.roles.filter(x => !x.isActive).length;
+  // }
+
+  addRole() {
+    this.currentPage = 'add';
   }
 
-  onSubmit(): void {
-    if (this.roleForm.valid) {
-      console.log(this.roleForm.value);
-    }
-  }
-  search = '';
-
-  roles: Role[] = [
-    {
-      id:1,
-      roleName:'Administrator',
-      description:'Full system access',
-      isActive:true,
-      isDeleted:false
-    },
-    {
-      id:2,
-      roleName:'Doctor',
-      description:'Manage patients',
-      isActive:true,
-      isDeleted:false
-    },
-    {
-      id:3,
-      roleName:'Receptionist',
-      description:'Appointment Management',
-      isActive:false,
-      isDeleted:false
-    }
-  ];
-
-  get filteredRoles(){
-    return this.roles.filter(x =>
-      x.roleName.toLowerCase().includes(this.search.toLowerCase()));
+  editRole(id: number) {
+    this.selectedRoleId = id;
+    this.currentPage = 'edit';
   }
 
-  addRole(){
-    alert('Add Role');
-  }
-
-  edit(role:Role){
-    alert(role.roleName);
-  }
-
-  delete(role:Role){
-    if(confirm('Delete this role?')){
-      this.roles=this.roles.filter(x=>x.id!=role.id);
-    }
+  backToList() {
+    this.currentPage = 'list';
   }
 
 }
-
-
-

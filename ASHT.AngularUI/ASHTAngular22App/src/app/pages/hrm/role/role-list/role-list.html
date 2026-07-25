@@ -1,1 +1,65 @@
-<p>role-list works!</p>
+<div class="role-list-wrapper">
+
+  <!-- Stats -->
+  <div class="stats-row">
+    <div class="stat-card">
+      <div class="stat-label">Total Roles</div>
+      <div class="stat-value">{{ totalRoles }}</div>
+    </div>
+    <div class="stat-card active">
+      <div class="stat-label">Active</div>
+      <div class="stat-value">{{ activeRoles }}</div>
+    </div>
+    <div class="stat-card inactive">
+      <div class="stat-label">Inactive</div>
+      <div class="stat-value">{{ inactiveRoles }}</div>
+    </div>
+  </div>
+
+  <!-- Toolbar -->
+  <div class="toolbar">
+    <input
+      type="text"
+      class="search-input"
+      placeholder="Search by role name or description..."
+      [(ngModel)]="searchText" />
+
+    <button class="btn-add" (click)="addRole()">
+      + Add Role
+    </button>
+  </div>
+
+  <!-- Table -->
+  <table class="role-table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Role Name</th>
+        <th>Description</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let role of filteredRoles; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ role.roleName }}</td>
+        <td>{{ role.description }}</td>
+        <td>
+          <span class="badge" [class.badge-active]="role.isActive" [class.badge-inactive]="!role.isActive">
+            {{ role.isActive ? 'Active' : 'Inactive' }}
+          </span>
+        </td>
+        <td class="actions">
+          <button class="btn-edit" (click)="editRole(role)">Edit</button>
+          <button class="btn-delete" (click)="deleteRole(role)">Delete</button>
+        </td>
+      </tr>
+
+      <tr *ngIf="filteredRoles.length === 0">
+        <td colspan="5" class="no-data">No roles found.</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>

@@ -1,211 +1,25 @@
-<div class="container-fluid py-4">
+<div class="page-container">
 
-    <div class="d-flex justify-content-between align-items-center mb-4">
+    <!-- Header -->
 
-        <div>
+    <!-- Content -->
 
-            <h2 class="fw-bold">
-                <i class="bi bi-shield-lock-fill text-primary"></i>
-                Role Management
-            </h2>
+    <div class="content-card">
 
-            <small class="text-secondary">
-                Manage application roles and permissions
-            </small>
+        <app-role-list
+            *ngIf="currentPage=='list'"
+            (addClicked)="addRole()"
+            (editClicked)="editRole($event)">
+        </app-role-list>
 
-        </div>
+        <app-add-role
+            *ngIf="currentPage=='add'">
+        </app-add-role>
 
-        <button class="btn btn-primary" (click)="addRole()">
-
-            <i class="bi bi-plus-circle"></i>
-
-            Add Role
-
-        </button>
+        <app-edit-role
+            *ngIf="currentPage=='edit'"
+            [roleIdInput]="selectedRoleId">
+        </app-edit-role>
 
     </div>
-
-    <!-- Cards -->
-
-    <div class="row mb-4">
-
-        <div class="col-md-4">
-
-            <div class="card shadow-sm border-0">
-
-                <div class="card-body">
-
-                    <h6>Total Roles</h6>
-
-                    <h2>{{roles.length}}</h2>
-
-                </div>
-
-            </div>
-
-        </div>
-
-        <div class="col-md-4">
-
-            <div class="card shadow-sm border-0">
-
-                <div class="card-body">
-
-                    <h6>Active Roles</h6>
-
-                    <h2 class="text-success">
-
-                        {{roles.filter(x=>x.isActive).length}}
-
-                    </h2>
-
-                </div>
-
-            </div>
-
-        </div>
-
-        <div class="col-md-4">
-
-            <div class="card shadow-sm border-0">
-
-                <div class="card-body">
-
-                    <h6>Inactive Roles</h6>
-
-                    <h2 class="text-danger">
-
-                        {{roles.filter(x=>!x.isActive).length}}
-
-                    </h2>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-    <!-- Search -->
-
-    <div class="card shadow-sm border-0 mb-3">
-
-        <div class="card-body">
-
-            <div class="input-group">
-
-                <span class="input-group-text">
-
-                    <i class="bi bi-search"></i>
-
-                </span>
-
-                <input
-
-                    class="form-control"
-
-                    placeholder="Search role..."
-
-                    [(ngModel)]="search">
-
-            </div>
-
-        </div>
-
-    </div>
-
-    <!-- Table -->
-
-    <div class="card shadow-sm border-0">
-
-        <div class="table-responsive">
-
-            <table class="table table-hover align-middle mb-0">
-
-                <thead class="table-light">
-
-                    <tr>
-
-                        <th>#</th>
-
-                        <th>Role Name</th>
-
-                        <th>Description</th>
-
-                        <th>Status</th>                        
-                        <th width="170">Action</th>
-
-                    </tr>
-
-                </thead>
-
-                <tbody>
-
-                    <tr *ngFor="let role of filteredRoles">
-
-                        <td>{{role.id}}</td>
-
-                        <td>
-
-                            <strong>{{role.roleName}}</strong>
-
-                        </td>
-
-                        <td>
-
-                            {{role.description}}
-
-                        </td>
-
-                        <td>
-
-                            <span
-
-                                class="badge"
-
-                                [class.bg-success]="role.isActive"
-
-                                [class.bg-danger]="!role.isActive">
-
-                                {{role.isActive?'Active':'Inactive'}}
-
-                            </span>
-
-                        </td>                       
-
-                        <td>
-
-                            <button
-
-                                class="btn btn-outline-primary btn-sm me-2"
-
-                                (click)="edit(role)">
-
-                                <i class="bi bi-pencil-square"></i>
-
-                            </button>
-
-                            <button
-
-                                class="btn btn-outline-danger btn-sm"
-
-                                (click)="delete(role)">
-
-                                <i class="bi bi-trash"></i>
-
-                            </button>
-
-                        </td>
-
-                    </tr>
-
-                </tbody>
-
-            </table>
-
-        </div>
-
-    </div>
-
 </div>
