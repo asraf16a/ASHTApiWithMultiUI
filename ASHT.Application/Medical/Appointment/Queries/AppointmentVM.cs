@@ -1,9 +1,6 @@
-﻿using ASHT.Application.Medical.Appointment.Queries;
-using MediatR;
-
-namespace ASHT.Application.Medical.Appointment.Commands
+﻿namespace ASHT.Application.Medical.Appointment.Queries
 {
-    public class CreateAppointmentCommand : IRequest<AppointmentVM>
+    public class AppointmentVM
     {
         public int Id { get; set; }
 
