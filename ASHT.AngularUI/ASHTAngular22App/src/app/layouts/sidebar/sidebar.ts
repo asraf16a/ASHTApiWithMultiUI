@@ -73,7 +73,7 @@ export class SidebarComponent {
         {
           title: 'Product Pricing',
           icon: 'bi-currency-dollar',
-          route: '/product-pricing'
+          route: '/product-price'
         }
       ]
     },
@@ -85,17 +85,17 @@ export class SidebarComponent {
         {
           title: 'Doctors',
           icon: 'bi-person-badge',
-          route: '/doctors'
+          route: '/doctor'
         },
         {
           title: 'Patients',
           icon: 'bi-person-heart',
-          route: '/patients'
+          route: '/patient'
         },
         {
           title: 'Appointments',
           icon: 'bi-calendar-check',
-          route: '/appointments'
+          route: '/appointment'
         },
         {
           title: 'Prescription',

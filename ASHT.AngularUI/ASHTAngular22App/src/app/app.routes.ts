@@ -9,6 +9,11 @@ import { CategoryComponent } from './pages/inventory/category/category';
 import { SubcategoryComponent } from './pages/inventory/subcategory/subcategory';
 import { RolePrivilegeComponent } from './pages/hrm/roleprivilege/role-privilege/role-privilege';
 import { ProductComponent } from './pages/inventory/product/product';
+import { ProductPriceComponent } from './pages/inventory/product-price/product-price';
+import { AppointmentComponent } from './pages/medical/appointment/appointment';
+import { DoctorComponent } from './pages/medical/doctor/doctor';
+import { PatientComponent } from './pages/medical/patient/patient';
+import { PrescriptionDetailsComponent } from './pages/medical/prescription-details/prescription-details';
 
 export const routes: Routes = [
 
@@ -48,7 +53,30 @@ export const routes: Routes = [
       {
         path:'product',
         component:ProductComponent
+      },
+      {
+        path:'product-price',
+        component:ProductPriceComponent
+      },
+      {
+        path:'doctor',
+        component:DoctorComponent
+      },
+      {
+        path:'patient',
+        component:PatientComponent
       }
+      ,
+      {
+        path:'appointment',
+        component:AppointmentComponent
+      },
+      {
+        path:'prescription-details',
+        component:PrescriptionDetailsComponent
+      }
+
+
 
     ]
   }
