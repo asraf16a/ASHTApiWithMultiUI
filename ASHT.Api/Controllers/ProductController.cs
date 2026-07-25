@@ -18,15 +18,13 @@ namespace ASHT.Api.Controllers
             _apiResponse = new APIResponse();
         }
 
-        [HttpPost]
-        [Route("Add")]
-        // api/product/add
+        [HttpPost("Add")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status403Forbidden)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<ActionResult<APIResponse>> Add([FromBody] CreateProductCommand command)
+        public async Task<ActionResult<APIResponse>> AddAsync([FromBody] CreateProductCommand command)
         {
             try
             {

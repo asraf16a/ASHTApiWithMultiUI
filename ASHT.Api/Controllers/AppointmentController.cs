@@ -1,5 +1,5 @@
-﻿using ASHT.Application.Hrm.Role.Commands.Create;
-using ASHT.Application.Hrm.Role.Queries;
+﻿using ASHT.Application.Medical.Appointment.Commands;
+using ASHT.Application.Medical.Appointment.Queries.GetAppointmentQuery;
 using ASHT.SharedKarnel.Dto;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -13,7 +13,7 @@ namespace ASHT.Api.Controllers
     {
         private readonly IMediator _mediator;
         private readonly APIResponse _apiResponse;
-        public RoleController(IMediator mediator)
+        public AppointmentController(IMediator mediator)
         {
             _mediator = mediator;
             _apiResponse = new APIResponse();
@@ -26,7 +26,7 @@ namespace ASHT.Api.Controllers
         [ProducesResponseType(StatusCodes.Status403Forbidden)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<ActionResult<APIResponse>> AddRole(CreateRoleCommand command)
+        public async Task<ActionResult<APIResponse>> AddAppointment(CreateAppointmentCommand command)
         {
             try
             {
@@ -54,17 +54,17 @@ namespace ASHT.Api.Controllers
         }
 
 
-        [HttpGet("GetAllRoles")]
+        [HttpGet("GetAllAppointments")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(StatusCodes.Status403Forbidden)]
-        public async Task<ActionResult<APIResponse>> GetRolesAsync()
+        public async Task<ActionResult<APIResponse>> GetAppointmentsAsync()
         {
             try
             {
-                var result = await _mediator.Send(new GetRoleQuery());
+                var result = await _mediator.Send(new GetAppointmentQuery());
                 _apiResponse.Data = result;
                 _apiResponse.Status = true;
                 _apiResponse.StatusCode = HttpStatusCode.OK;
