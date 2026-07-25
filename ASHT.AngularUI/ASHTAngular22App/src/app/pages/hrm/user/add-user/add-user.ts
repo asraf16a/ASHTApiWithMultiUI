@@ -5,6 +5,8 @@ import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angula
 import { Router } from '@angular/router';
 import { UserTypeService } from '../../../../shared/services/user-type';
 import { UserType } from '../../../../shared/models/user-type';
+import { UserService } from '../../../../shared/services/user-service';
+import { User } from '../../../../shared/models/user';
 
 @Component({
   selector: 'app-add-user',
@@ -24,6 +26,7 @@ export class AddUserComponent {
   userTypes:UserType[] = [ ];
 
   constructor(
+    private userService:UserService,
     private userTypeService:UserTypeService,
     private fb: FormBuilder,
     private router: Router,
@@ -74,22 +77,31 @@ export class AddUserComponent {
 
   }
 
-  save() {
+  save(): void {
 
-    if (this.userForm.invalid) {
-
-      this.userForm.markAllAsTouched();
-
-      return;
-
-    }
-
-    console.log(this.userForm.value);
-
-    alert('User Saved Successfully');
-
+  if (this.userForm.invalid) {
+    this.userForm.markAllAsTouched();
+    return;
   }
 
+  const formValue = this.userForm.value;
+
+  const user: User = {
+    id: 0,
+    username: formValue.username,
+    userTypeId: formValue.userTypeId,
+    isActive: formValue.isActive,
+    isDeleted: false,
+    createdDate: new Date().toISOString(),
+    modifiedDate: new Date().toISOString()
+  };
+
+  this.userService.createUser(user).subscribe({
+    next: () => alert('User Saved Successfully'),
+    error: (err) => console.error(err)
+  });
+
+}
   cancel() {
 
     this.router.navigate(['/users']);

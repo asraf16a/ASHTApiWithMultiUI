@@ -1,8 +1,10 @@
 export interface User {
-  id: number;
-  username: string;
-  userTypeName: string;
+  id: any;
+  username: any;
+  userTypeName?: string;
+  userTypeId: number;
   isActive: boolean;
+  isDeleted:boolean;
   createdDate: string;
   modifiedDate: string;
 }
