@@ -92,6 +92,8 @@ export class AddUserComponent {
     userTypeId: formValue.userTypeId,
     isActive: formValue.isActive,
     isDeleted: false,
+    password:formValue.password,
+    passwordSalt:formValue.confirmPassword,
     createdDate: new Date().toISOString(),
     modifiedDate: new Date().toISOString()
   };

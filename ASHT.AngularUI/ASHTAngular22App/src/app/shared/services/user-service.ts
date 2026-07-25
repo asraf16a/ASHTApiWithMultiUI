@@ -46,7 +46,7 @@ export class UserService {
 
   createUser(user: User): Observable<User> {
 
-    return this.http.post<User>('${this.apiUrl}/AddAsync', user);
+    return this.http.post<User>(`${this.apiUrl}/AddAsync`, user);
 
   }
 

@@ -3,6 +3,8 @@ export interface User {
   username: any;
   userTypeName?: string;
   userTypeId: number;
+  password?:string;
+  passwordSalt?:string;
   isActive: boolean;
   isDeleted:boolean;
   createdDate: string;
