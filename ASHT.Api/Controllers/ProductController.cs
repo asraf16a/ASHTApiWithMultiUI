@@ -55,7 +55,7 @@ namespace ASHT.Api.Controllers
         }
 
         //query to get all products
-        [HttpGet("GetAllProductList")]
+        [HttpGet("GetAll")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]

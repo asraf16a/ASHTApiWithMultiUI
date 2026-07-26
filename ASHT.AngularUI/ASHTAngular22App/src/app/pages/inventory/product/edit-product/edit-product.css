@@ -1,0 +1,22 @@
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.card {
+    border-radius: 10px;
+}
+
+.form-label {
+    font-weight: 600;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.btn {
+    min-width: 120px;
+}

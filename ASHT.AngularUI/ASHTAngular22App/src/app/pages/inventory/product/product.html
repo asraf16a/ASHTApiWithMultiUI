@@ -1,1 +1,26 @@
-<p>product works! with Ashraf</p>
+<div class="page-container">
+
+    <!-- Header -->
+
+    <!-- Content -->
+
+    <div class="content-card">
+
+        <app-product-list
+            *ngIf="currentPage == 'list'"
+            (addClicked)="addProduct()"
+            (editClicked)="editProduct($event)">
+        </app-product-list>
+
+        <app-add-product
+            *ngIf="currentPage == 'add'">
+        </app-add-product>
+
+        <app-edit-product
+            *ngIf="currentPage == 'edit'"
+            [productIdInput]="selectedProductId">
+        </app-edit-product>
+
+    </div>
+
+</div>
