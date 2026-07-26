@@ -23,5 +23,11 @@ namespace ASHT.Domain.Entities.Inventory
         public decimal PurchasePrice { get; set; }
 
         public byte[] ImageContent { get; set; }
+
+        [ForeignKey("CategoryId")]
+        public Category Category { get; set; }
+
+        [ForeignKey("SubCategoryId")]
+        public SubCategory SubCategory { get; set; }
     }
 }

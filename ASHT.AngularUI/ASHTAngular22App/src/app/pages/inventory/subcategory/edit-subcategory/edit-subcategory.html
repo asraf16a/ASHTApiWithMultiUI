@@ -1,1 +1,111 @@
-<p>edit-subcategory works!</p>
+<div class="page-header">
+
+    <div>
+
+        <h2>
+
+            <i class="bi bi-pencil-square text-primary"></i>
+
+            Edit Subcategory
+
+        </h2>
+
+        <p class="text-muted">
+
+            Update existing subcategory information
+
+        </p>
+
+    </div>
+
+</div>
+
+<div class="card shadow-sm">
+
+    <div class="card-body">
+
+        <form
+            [formGroup]="subCategoryForm"
+            (ngSubmit)="update()">
+
+            <div class="row">
+
+                <div class="col-md-6 mb-3">
+
+                    <label class="form-label">
+
+                        Category
+
+                    </label>
+
+                    <select
+                        class="form-select"
+                        formControlName="categoryId">
+
+                        <option [ngValue]="null">
+
+                            Select Category
+
+                        </option>
+
+                        <option
+                            *ngFor="let category of categories"
+                            [value]="category.id">
+
+                            {{category.categoryName}}
+
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <div class="col-md-6 mb-3">
+
+                    <label class="form-label">
+
+                        Subcategory Name
+
+                    </label>
+
+                    <input
+                        type="text"
+                        class="form-control"
+                        formControlName="subCategoryName">
+
+                </div>
+
+            </div>
+
+            <hr>
+
+            <div class="text-end">
+
+                <button
+                    type="button"
+                    class="btn btn-secondary me-2"
+                    (click)="cancel()">
+
+                    <i class="bi bi-arrow-left-circle"></i>
+
+                    Back
+
+                </button>
+
+                <button
+                    type="submit"
+                    class="btn btn-primary">
+
+                    <i class="bi bi-check-circle"></i>
+
+                    Update Subcategory
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>

@@ -19,9 +19,7 @@ namespace ASHT.Api.Controllers
             _apiResponse = new APIResponse();
         }
 
-        [HttpPost]
-        [Route("Add")]
-        // api/subCategory/add
+        [HttpPost("AddAsync")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status403Forbidden)]

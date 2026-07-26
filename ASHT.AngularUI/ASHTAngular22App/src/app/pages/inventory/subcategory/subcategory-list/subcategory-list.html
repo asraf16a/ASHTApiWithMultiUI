@@ -1,1 +1,128 @@
-<p>subcategory-list works!</p>
+<div class="page-header">
+
+    <div>
+        <h2>
+            <i class="bi bi-diagram-3-fill text-primary"></i>
+            Subcategory Management
+        </h2>
+
+        <p class="text-muted">
+            Manage application subcategories
+        </p>
+    </div>
+
+    <button
+        class="btn btn-primary"
+        (click)="addSubcategory()">
+
+        <i class="bi bi-plus-circle"></i>
+        Add Subcategory
+
+    </button>
+
+</div>
+
+<div class="row g-4 mb-4">
+
+    <div class="col-md-12">
+
+        <div class="card stats-card">
+
+            <div class="card-body">
+
+                <h6>Total Subcategories</h6>
+
+                <h2>{{ totalSubcategories }}</h2>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="card shadow-sm">
+
+    <div class="card-body">
+
+        <div class="mb-3">
+
+            <input
+                type="text"
+                class="form-control"
+                placeholder="Search subcategory..."
+                [(ngModel)]="searchText">
+
+        </div>
+
+        <div class="table-responsive">
+
+            <table class="table table-hover align-middle">
+
+                <thead class="table-light">
+
+                    <tr>
+
+                        <th>ID</th>
+                        <th>Subcategory Name</th>
+                        <th>Category</th>
+                        <th width="140">Action</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr *ngFor="let subcategory of subcategories">
+
+                        <td>{{ subcategory.id }}</td>
+
+                        <td>
+                            <strong>{{ subcategory.subCategoryName }}</strong>
+                        </td>
+
+                        <td>{{ subcategory.categoryName }}</td>
+
+                        <td>
+
+                            <button
+                                class="btn btn-outline-primary btn-sm me-2"
+                                (click)="editSubcategory(subcategory)">
+
+                                <i class="bi bi-pencil-square"></i>
+
+                            </button>
+
+                            <button
+                                class="btn btn-outline-danger btn-sm"
+                                (click)="deleteSubcategory(subcategory)">
+
+                                <i class="bi bi-trash"></i>
+
+                            </button>
+
+                        </td>
+
+                    </tr>
+
+                    <tr *ngIf="subcategories.length === 0">
+
+                        <td colspan="4" class="text-center text-muted">
+
+                            No subcategories found.
+
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
