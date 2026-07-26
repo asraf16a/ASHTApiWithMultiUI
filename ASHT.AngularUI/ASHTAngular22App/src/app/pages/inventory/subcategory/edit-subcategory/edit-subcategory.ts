@@ -72,7 +72,7 @@ export class EditSubcategoryComponent implements OnInit {
 
   loadCategories(): void {
 
-    this.categoryService.getAllCategories().subscribe({
+    this.categoryService.getAllCategoryList().subscribe({
 
       next: (data: Category[]) => {
 

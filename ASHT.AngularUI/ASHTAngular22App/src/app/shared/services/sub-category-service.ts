@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { SubCategory } from '../models/sub-category';
-
+import { environment } from '../../../environments/environment';
 
 
 @Injectable({
@@ -10,13 +10,13 @@ import { SubCategory } from '../models/sub-category';
 })
 export class SubCategoryService {
 
-  private apiUrl = 'https://localhost:5001/api/SubCategory';
+  private apiUrl = `${environment.apiUrl}/SubCategory`;
 
   constructor(private http: HttpClient) { }
 
   getAllSubCategoryList(): Observable<SubCategory[]> {
 
-    return this.http.get<SubCategory[]>(`${this.apiUrl}/GetAll`);
+    return this.http.get<SubCategory[]>(`${this.apiUrl}/GetAllSubCategoryList`);
 
   }
 

@@ -1,1 +1,26 @@
-<p>subcategory works!</p>
+<div class="page-container">
+
+    <!-- Header -->
+
+    <!-- Content -->
+
+    <div class="content-card">
+
+        <app-subcategory-list
+            *ngIf="currentPage == 'list'"
+            (addClicked)="addSubcategory()"
+            (editClicked)="editSubcategory($event)">
+        </app-subcategory-list>
+
+        <app-add-subcategory
+            *ngIf="currentPage == 'add'">
+        </app-add-subcategory>
+
+        <app-edit-subcategory
+            *ngIf="currentPage == 'edit'"
+            [subcategoryIdInput]="selectedSubcategoryId">
+        </app-edit-subcategory>
+
+    </div>
+
+</div>

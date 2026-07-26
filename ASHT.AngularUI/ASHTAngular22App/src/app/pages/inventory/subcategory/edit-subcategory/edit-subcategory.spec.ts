@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EditSubcategory } from './edit-subcategory';
+import { EditSubcategoryComponent } from './edit-subcategory';
 
 describe('EditSubcategory', () => {
-  let component: EditSubcategory;
-  let fixture: ComponentFixture<EditSubcategory>;
+  let component: EditSubcategoryComponent;
+  let fixture: ComponentFixture<EditSubcategoryComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [EditSubcategory],
+      imports: [EditSubcategoryComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(EditSubcategory);
+    fixture = TestBed.createComponent(EditSubcategoryComponent);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

@@ -3,15 +3,15 @@ using MediatR;
 
 namespace ASHT.Application.Inventory.SubCategory.Queries.GetAllSubCategory
 {
-    public class GetAllCategoryQueryHandler : IRequestHandler<GetAllCategoryQuery, List<GetSubCategoryVM>>
+    public class GetAllSubCategoryQueryHandler : IRequestHandler<GetAllSubCategoryQuery, List<GetSubCategoryVM>>
     {
         private readonly ISubCategoryService _subCategoryService;
-        public GetAllCategoryQueryHandler(ISubCategoryService subCategoryService)
+        public GetAllSubCategoryQueryHandler(ISubCategoryService subCategoryService)
         {
             _subCategoryService = subCategoryService;
         }
 
-        public async Task<List<GetSubCategoryVM>> Handle(GetAllCategoryQuery request, CancellationToken cancellationToken)
+        public async Task<List<GetSubCategoryVM>> Handle(GetAllSubCategoryQuery request, CancellationToken cancellationToken)
         {
             var subCategories = await _subCategoryService.GetAllSubCategoriesAsync();
             return subCategories.Select(sc => new GetSubCategoryVM

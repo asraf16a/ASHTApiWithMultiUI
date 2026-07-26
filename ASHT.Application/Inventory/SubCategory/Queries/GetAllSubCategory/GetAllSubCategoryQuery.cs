@@ -2,7 +2,7 @@
 
 namespace ASHT.Application.Inventory.SubCategory.Queries.GetAllSubCategory
 {
-    public class GetAllCategoryQuery : IRequest<List<GetSubCategoryVM>>
+    public class GetAllSubCategoryQuery : IRequest<List<GetSubCategoryVM>>
     {
     }
 }

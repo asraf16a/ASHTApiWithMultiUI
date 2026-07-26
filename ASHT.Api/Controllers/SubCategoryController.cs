@@ -1,5 +1,5 @@
-﻿using ASHT.Application.Inventory.Category.Queries.GetAllCategory;
-using ASHT.Application.Inventory.SubCategory.Commands.Create;
+﻿using ASHT.Application.Inventory.SubCategory.Commands.Create;
+using ASHT.Application.Inventory.SubCategory.Queries.GetAllSubCategory;
 using ASHT.SharedKarnel.Dto;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -52,18 +52,18 @@ namespace ASHT.Api.Controllers
             }
         }
 
-        //query to get all categories
-        [HttpGet("GetAllCategoryList")]
+        //query to get all sub categories
+        [HttpGet("GetAllSubCategoryList")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(StatusCodes.Status403Forbidden)]
-        public async Task<ActionResult<APIResponse>> GetAllCategoryListAsync()
+        public async Task<ActionResult<APIResponse>> GetAllSubCategoryListAsync()
         {
             try
             {
-                var result = await _mediator.Send(new GetAllCategoryQuery());
+                var result = await _mediator.Send(new GetAllSubCategoryQuery());
                 _apiResponse.Data = result;
                 _apiResponse.Status = true;
                 _apiResponse.StatusCode = HttpStatusCode.OK;
