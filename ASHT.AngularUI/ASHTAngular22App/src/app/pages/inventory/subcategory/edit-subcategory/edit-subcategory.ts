@@ -11,6 +11,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Category } from '../../../../shared/models/category';
 import { CategoryService } from '../../../../shared/services/category-service';
 import { SubCategoryService } from '../../../../shared/services/sub-category-service';
+import { SubCategory } from '../../../../shared/models/sub-category';
 
 
 @Component({
