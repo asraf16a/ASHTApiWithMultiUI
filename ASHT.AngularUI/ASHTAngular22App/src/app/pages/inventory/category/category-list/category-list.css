@@ -1,0 +1,33 @@
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.stats-card {
+    border-left: 4px solid #0d6efd;
+    transition: .3s;
+}
+
+.stats-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, .1);
+}
+
+.table th {
+    font-weight: 600;
+}
+
+.table td {
+    vertical-align: middle;
+}
+
+.btn-sm {
+    width: 36px;
+    height: 36px;
+}
+
+.form-control {
+    max-width: 350px;
+}

@@ -1,0 +1,115 @@
+<div class="page-header">
+
+    <div>
+        <h2>
+            <i class="bi bi-tags-fill text-primary"></i>
+            Category Management
+        </h2>
+
+        <p class="text-muted">
+            Manage product categories
+        </p>
+    </div>
+
+    <button class="btn btn-primary" (click)="addCategory()">
+        <i class="bi bi-plus-circle"></i>
+        Add Category
+    </button>
+
+</div>
+
+<div class="row g-4 mb-4">
+
+    <div class="col-md-12">
+
+        <div class="card stats-card">
+
+            <div class="card-body">
+
+                <h6>Total Categories</h6>
+
+                <h2>{{totalCategories}}</h2>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="card shadow-sm">
+
+    <div class="card-body">
+
+        <div class="mb-3">
+
+            <input
+                type="text"
+                class="form-control"
+                placeholder="Search category..."
+                [(ngModel)]="searchText">
+
+        </div>
+
+        <div class="table-responsive">
+
+            <table class="table table-hover align-middle">
+
+                <thead class="table-light">
+
+                    <tr>
+                        <th width="80">#</th>
+                        <th>Category Name</th>
+                        <th width="140">Action</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr *ngFor="let category of categories">
+
+                        <td>{{category.id}}</td>
+
+                        <td>
+                            {{category.name}}
+                        </td>
+
+                        <td>
+
+                            <button
+                                class="btn btn-outline-primary btn-sm me-2"
+                                (click)="editCategory(category)">
+
+                                <i class="bi bi-pencil-square"></i>
+
+                            </button>
+
+                            <button
+                                class="btn btn-outline-danger btn-sm"
+                                (click)="deleteCategory(category)">
+
+                                <i class="bi bi-trash"></i>
+
+                            </button>
+
+                        </td>
+
+                    </tr>
+
+                    <tr *ngIf="categories.length == 0">
+                        <td colspan="3" class="text-center text-muted">
+                            No categories found.
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
