@@ -1,1 +1,26 @@
-<p>category works!</p>
+<div class="page-container">
+
+    <!-- Header -->
+
+    <!-- Content -->
+
+    <div class="content-card">
+
+        <app-category-list
+            *ngIf="currentPage == 'list'"
+            (addClicked)="addCategory()"
+            (editClicked)="editCategory($event)">
+        </app-category-list>
+
+        <app-add-category
+            *ngIf="currentPage == 'add'">
+        </app-add-category>
+
+        <app-edit-category
+            *ngIf="currentPage == 'edit'"
+            [categoryIdInput]="selectedCategoryId">
+        </app-edit-category>
+
+    </div>
+
+</div>

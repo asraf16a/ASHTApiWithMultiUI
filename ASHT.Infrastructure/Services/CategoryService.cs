@@ -1,6 +1,7 @@
 ﻿using ASHT.Domain.Entities.Inventory;
 using ASHT.Domain.Interface;
 using ASHT.Persistent;
+using Microsoft.EntityFrameworkCore;
 
 namespace ASHT.Infrastructure.Services
 {
@@ -18,6 +19,12 @@ namespace ASHT.Infrastructure.Services
             _dbContext.Categorys.Add(category);
             await _dbContext.SaveChangesAsync();
             return category;
+        }
+
+
+        public async Task<List<Category>> GetAllAsync(CancellationToken cancellationToken)
+        {
+            return await _dbContext.Categorys.AsNoTracking().ToListAsync(cancellationToken);
         }
     }
 }
