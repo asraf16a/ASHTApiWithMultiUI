@@ -1,1 +1,208 @@
-<p>add-product works!</p>
+<div class="page-header">
+
+    <div>
+
+        <h2>
+
+            <i class="bi bi-box-seam text-primary"></i>
+
+            Add Product
+
+        </h2>
+
+        <p class="text-muted">
+
+            Create a new product
+
+        </p>
+
+    </div>
+
+</div>
+
+<div class="card shadow-sm">
+
+    <div class="card-body">
+
+        <form
+            [formGroup]="productForm"
+            (ngSubmit)="save()">
+
+            <div class="row">
+
+                <div class="col-md-6 mb-3">
+
+                    <label class="form-label">
+
+                        Product Name
+
+                    </label>
+
+                    <input
+                        class="form-control"
+                        formControlName="name">
+
+                </div>
+
+                <div class="col-md-6 mb-3">
+
+                    <label class="form-label">
+
+                        Purchase Price
+
+                    </label>
+
+                    <input
+                        type="number"
+                        class="form-control"
+                        formControlName="purchasePrice">
+
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-6 mb-3">
+
+                    <label class="form-label">
+
+                        Category
+
+                    </label>
+
+                    <select
+                        class="form-select"
+                        formControlName="categoryId"
+                        (change)="onCategoryChange()">
+
+                        <option [ngValue]="null">
+
+                            Select Category
+
+                        </option>
+
+                        <option
+                            *ngFor="let category of categories"
+                            [value]="category.id">
+
+                            {{category.name}}
+
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <div class="col-md-6 mb-3">
+
+                    <label class="form-label">
+
+                        Subcategory
+
+                    </label>
+
+                    <select
+                        class="form-select"
+                        formControlName="subCategoryId">
+
+                        <option [ngValue]="null">
+
+                            Select Subcategory
+
+                        </option>
+
+                        <option
+                            *ngFor="let sub of subCategories"
+                            [value]="sub.id">
+
+                            {{sub.subCategoryName}}
+
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+            <div class="mb-3">
+
+                <label class="form-label">
+
+                    Description
+
+                </label>
+
+                <textarea
+                    rows="3"
+                    class="form-control"
+                    formControlName="description">
+                </textarea>
+
+            </div>
+
+            <div class="mb-3">
+
+                <label class="form-label">
+
+                    Feature
+
+                </label>
+
+                <textarea
+                    rows="3"
+                    class="form-control"
+                    formControlName="feature">
+                </textarea>
+
+            </div>
+
+            <div class="mb-3">
+
+                <label class="form-label">
+
+                    Product Image
+
+                </label>
+
+                <input
+                    type="file"
+                    class="form-control"
+                    accept="image/*"
+                    (change)="onImageSelected($event)">
+
+            </div>
+
+            <hr>
+
+            <div class="text-end">
+
+                <button
+                    type="button"
+                    class="btn btn-secondary me-2"
+                    (click)="cancel()">
+
+                    <i class="bi bi-x-circle"></i>
+
+                    Cancel
+
+                </button>
+
+                <button
+                    type="submit"
+                    class="btn btn-primary">
+
+                    <i class="bi bi-check-circle"></i>
+
+                    Save Product
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>

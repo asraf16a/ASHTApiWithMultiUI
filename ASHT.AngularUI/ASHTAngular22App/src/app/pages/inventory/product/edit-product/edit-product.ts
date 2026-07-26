@@ -9,12 +9,12 @@ import {
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { Category } from '../../../../shared/models/category';
-import { SubCategory } from '../../../../shared/models/subcategory';
 import { Product } from '../../../../shared/models/product';
 
 import { CategoryService } from '../../../../shared/services/category-service';
-import { SubCategoryService } from '../../../../shared/services/subcategory-service';
 import { ProductService } from '../../../../shared/services/product-service';
+import { SubCategoryService } from '../../../../shared/services/sub-category-service';
+import { SubCategory } from '../../../../shared/models/sub-category';
 
 @Component({
   selector: 'app-edit-product',
@@ -87,7 +87,7 @@ export class EditProductComponent implements OnInit {
 
   loadCategories(): void {
 
-    this.categoryService.getAllCategories().subscribe({
+    this.categoryService.getAllCategoryList().subscribe({
 
       next: (data: Category[]) => {
 
