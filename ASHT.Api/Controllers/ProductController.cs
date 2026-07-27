@@ -75,9 +75,12 @@ namespace ASHT.Api.Controllers
             catch (Exception ex)
             {
                 _apiResponse.Status = false;
-                _apiResponse.StatusCode = HttpStatusCode.InternalServerError;
+                // _apiResponse.StatusCode = StatusCodes.Status500InternalServerError;
+
+                _apiResponse.Errors ??= new List<string>();
                 _apiResponse.Errors.Add(ex.Message);
-                return _apiResponse;
+
+                return StatusCode(StatusCodes.Status500InternalServerError, _apiResponse);
             }
         }
     }

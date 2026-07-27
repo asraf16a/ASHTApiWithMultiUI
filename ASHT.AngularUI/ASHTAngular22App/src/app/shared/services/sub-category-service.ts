@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { SubCategory } from '../models/sub-category';
 import { environment } from '../../../environments/environment';
 
@@ -16,7 +16,11 @@ export class SubCategoryService {
 
   getAllSubCategoryList(): Observable<SubCategory[]> {
 
-    return this.http.get<SubCategory[]>(`${this.apiUrl}/GetAllSubCategoryList`);
+      return this.http.get<any>(`${this.apiUrl}/GetAllSubCategoryList`).pipe(
+        map(res=>{
+        return res.data;
+      })
+    );
 
   }
 

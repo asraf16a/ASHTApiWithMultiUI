@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Net;
-using System.Text;
+﻿using System.Net;
 
 namespace ASHT.SharedKarnel.Dto
 {
     public class APIResponse
     {
+        public APIResponse()
+        {
+            Errors = new List<string>();
+        }
         public bool Status { get; set; }
         public HttpStatusCode StatusCode { get; set; }
         public dynamic Data { get; set; }

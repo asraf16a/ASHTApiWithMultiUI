@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable,map } from 'rxjs';
 
 import { Product } from '../models/product';
 import { environment } from '../../../environments/environment';
@@ -16,7 +16,11 @@ export class ProductService {
 
   // Get All Products
   getAllProducts(): Observable<Product[]> {
-    return this.http.get<Product[]>(`${this.apiUrl}/GetAll`);
+    return this.http.get<any>(`${this.apiUrl}/GetAll`).pipe(
+      map(res=>{
+        return res.data;
+      })
+    );
   }
 
   // Get Product By Id
