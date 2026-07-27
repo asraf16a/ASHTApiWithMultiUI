@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using MediatR;
 
 namespace ASHT.Application.Medical.Doctor.Queries.GetDoctorListByQuery
 {
-    internal class GetDoctorListQuery
+    public class GetDoctorListQuery : IRequest<List<GetDoctorVM>>
     {
+
     }
 }

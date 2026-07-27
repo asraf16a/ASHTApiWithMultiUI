@@ -22,7 +22,7 @@ namespace ASHT.Infrastructure.Services
 
         public async Task<List<Doctor>> GetDoctorListAsync()
         {
-            var doctors = await _context.Doctors.ToListAsync();
+            var doctors = await _context.Doctors.AsNoTracking().ToListAsync();
             return doctors;
         }
     }
