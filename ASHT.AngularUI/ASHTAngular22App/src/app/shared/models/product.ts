@@ -16,6 +16,6 @@ export interface Product {
 
   purchasePrice: number;
 
-  imageContent: Uint8Array | null;
+  imageContent?: string ;
 
 }

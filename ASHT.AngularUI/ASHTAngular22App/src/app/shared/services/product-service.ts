@@ -30,7 +30,7 @@ export class ProductService {
 
   // Create Product
   createProduct(product: Product): Observable<any> {
-    return this.http.post(`${this.apiUrl}/Create`, product);
+    return this.http.post(`${this.apiUrl}/AddAsync`, product);
   }
 
   // Update Product

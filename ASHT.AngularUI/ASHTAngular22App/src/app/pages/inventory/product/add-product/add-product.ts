@@ -33,7 +33,7 @@ export class AddProductComponent implements OnInit {
   categories: Category[] = [];
   subCategories: SubCategory[] = [];
 
-  selectedImage: Uint8Array | null = null;
+  selectedImage: string | undefined;
 
   constructor(
     private fb: FormBuilder,
@@ -116,22 +116,21 @@ export class AddProductComponent implements OnInit {
 
   onImageSelected(event: any): void {
 
-    const file = event.target.files[0];
+  const file = event.target.files[0];
 
-    if (!file) return;
+  if (!file) return;
 
-    const reader = new FileReader();
+  const reader = new FileReader();
 
-    reader.onload = () => {
+  reader.onload = () => {
 
-      this.selectedImage =
-        new Uint8Array(reader.result as ArrayBuffer);
+    this.selectedImage = reader.result as string;
 
-    };
+  };
 
-    reader.readAsArrayBuffer(file);
+  reader.readAsDataURL(file);
 
-  }
+}
 
   save(): void {
 
@@ -175,7 +174,7 @@ export class AddProductComponent implements OnInit {
 
         alert('Product Saved Successfully');
 
-        this.router.navigate(['/products']);
+        this.router.navigate(['/product']);
 
       },
 

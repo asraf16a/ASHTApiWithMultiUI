@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace ASHT.Application.Inventory.Product.Queries
+﻿namespace ASHT.Application.Inventory.Product.Queries
 {
     public class ProductVM
     {
@@ -18,7 +14,7 @@ namespace ASHT.Application.Inventory.Product.Queries
 
         public string Feature { get; set; }
 
-        public decimal Price { get; set; }
+        public decimal PurchasePrice { get; set; }
 
         public byte[] ImageContent { get; set; }
     }

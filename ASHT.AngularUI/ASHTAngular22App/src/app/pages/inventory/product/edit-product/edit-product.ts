@@ -37,7 +37,7 @@ export class EditProductComponent implements OnInit {
   categories: Category[] = [];
   subCategories: SubCategory[] = [];
 
-  selectedImage: Uint8Array | null = null;
+  selectedImage: string |undefined;
 
   constructor(
     private fb: FormBuilder,

@@ -22,7 +22,7 @@ namespace ASHT.Application.Inventory.Product.Commands.Create
                 Name = request.Name,
                 Description = request.Description,
                 Feature = request.Feature,
-                PurchasePrice = request.Price,
+                PurchasePrice = request.PurchasePrice,
                 ImageContent = request.ImageContent
             };
 
@@ -42,7 +42,7 @@ namespace ASHT.Application.Inventory.Product.Commands.Create
                 Name = product.Name,
                 Description = product.Description,
                 Feature = product.Feature,
-                Price = product.PurchasePrice,
+                PurchasePrice = product.PurchasePrice,
                 ImageContent = product.ImageContent
             };
         }

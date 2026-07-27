@@ -55,8 +55,10 @@ namespace ASHT.Persistent
             builder.ApplyConfiguration(new ProductConfig());
 
             //Medical Related table configuration
-            builder.ApplyConfiguration(new AppointmentConfig());
+            builder.ApplyConfiguration(new DoctorConfig());
             builder.ApplyConfiguration(new PrescriptionDetailConfig());
+            builder.ApplyConfiguration(new AppointmentConfig());
+            builder.ApplyConfiguration(new PatientConfig());
 
             //builder.Entity<Category>().ToTable(tb => tb.HasTrigger("trgAfterInsert"));
             //builder.Entity<Category>().ToTable(tb => tb.HasTrigger("trgAfterDelete"));

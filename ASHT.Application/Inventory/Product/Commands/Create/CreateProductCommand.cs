@@ -1,13 +1,9 @@
 ﻿using ASHT.Application.Inventory.Product.Queries;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Net;
-using System.Text;
 
 namespace ASHT.Application.Inventory.Product.Commands.Create
 {
-    public  class CreateProductCommand:IRequest<ProductVM>
+    public class CreateProductCommand : IRequest<ProductVM>
     {
         public int Id { get; set; }
 
@@ -21,8 +17,8 @@ namespace ASHT.Application.Inventory.Product.Commands.Create
 
         public string Feature { get; set; }
 
-        public decimal Price { get; set; }
+        public decimal PurchasePrice { get; set; }
 
-        public byte[] ImageContent { get; set; }
+        public byte[]? ImageContent { get; set; }
     }
 }
