@@ -17,7 +17,7 @@ import { ApiResponse } from '../models/api-response';
 })
 export class UserService {
 
-   private apiUrl = `${environment.apiBaseUrl}/User`;
+   private apiUrl = `${environment.apiUrl}/User`;
 
   constructor(private http: HttpClient) { }
 

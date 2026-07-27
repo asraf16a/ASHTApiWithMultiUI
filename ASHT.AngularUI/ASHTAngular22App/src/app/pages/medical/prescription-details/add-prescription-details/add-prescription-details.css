@@ -1,0 +1,38 @@
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.page-header h2 {
+    margin: 0;
+    font-weight: 600;
+}
+
+.page-header p {
+    margin: 0;
+}
+
+.card {
+    border: none;
+    border-radius: 12px;
+}
+
+.form-label {
+    font-weight: 600;
+}
+
+.form-control,
+.form-select,
+textarea {
+    border-radius: 8px;
+}
+
+.btn {
+    min-width: 120px;
+}
+
+.text-end {
+    margin-top: 20px;
+}

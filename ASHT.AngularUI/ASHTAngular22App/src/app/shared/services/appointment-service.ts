@@ -10,7 +10,7 @@ import { Appointment } from '../models/appointment';
 })
 export class AppointmentService {
 
-  private apiUrl = `${environment.apiBaseUrl}/Appointment`;
+  private apiUrl = `${environment.apiUrl}/Appointment`;
 
   constructor(
     private http: HttpClient

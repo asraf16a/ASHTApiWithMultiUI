@@ -16,7 +16,7 @@ import { ApiResponse } from '../models/api-response';
 })
 export class RoleService {
 
-   private apiUrl = `${environment.apiBaseUrl}/Role`;
+   private apiUrl = `${environment.apiUrl}/Role`;
 
   constructor(private http: HttpClient) { }
 

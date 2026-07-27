@@ -1,1 +1,147 @@
-<p>add-prescription-details works!</p>
+<div class="page-header">
+
+    <div>
+
+        <h2>
+
+            <i class="bi bi-capsule-pill text-primary"></i>
+
+            Add Prescription Details
+
+        </h2>
+
+        <p class="text-muted">
+
+            Add medicine prescription details
+
+        </p>
+
+    </div>
+
+</div>
+
+<div class="card shadow-sm">
+
+    <div class="card-body">
+
+        <form
+            [formGroup]="prescriptionForm"
+            (ngSubmit)="save()">
+
+            <div class="row">
+
+                <div class="col-md-6 mb-3">
+
+                    <label class="form-label">
+
+                        Medicine Name
+
+                    </label>
+
+                    <input
+                        type="text"
+                        class="form-control"
+                        formControlName="medicineName">
+
+                </div>
+
+                <div class="col-md-6 mb-3">
+
+                    <label class="form-label">
+
+                        Dosage
+
+                    </label>
+
+                    <input
+                        type="text"
+                        class="form-control"
+                        formControlName="dosage"
+                        placeholder="Example: 1 Tablet Twice Daily">
+
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-6 mb-3">
+
+                    <label class="form-label">
+
+                        Start Date
+
+                    </label>
+
+                    <input
+                        type="date"
+                        class="form-control"
+                        formControlName="startDate">
+
+                </div>
+
+                <div class="col-md-6 mb-3">
+
+                    <label class="form-label">
+
+                        End Date
+
+                    </label>
+
+                    <input
+                        type="date"
+                        class="form-control"
+                        formControlName="endDate">
+
+                </div>
+
+            </div>
+
+            <div class="mb-3">
+
+                <label class="form-label">
+
+                    Notes
+
+                </label>
+
+                <textarea
+                    rows="4"
+                    class="form-control"
+                    formControlName="notes"
+                    placeholder="Additional instructions for the patient"></textarea>
+
+            </div>
+
+            <hr>
+
+            <div class="text-end">
+
+                <button
+                    type="button"
+                    class="btn btn-secondary me-2"
+                    (click)="cancel()">
+
+                    <i class="bi bi-x-circle"></i>
+
+                    Cancel
+
+                </button>
+
+                <button
+                    type="submit"
+                    class="btn btn-primary">
+
+                    <i class="bi bi-check-circle"></i>
+
+                    Save Prescription
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>

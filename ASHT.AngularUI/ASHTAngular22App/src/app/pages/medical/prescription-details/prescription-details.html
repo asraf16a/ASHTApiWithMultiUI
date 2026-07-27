@@ -1,1 +1,31 @@
-<p>prescription-details works!</p>
+<div class="page-container">
+
+    <div class="content-card">
+
+        <app-prescription-details-list
+
+            *ngIf="currentPage == 'list'"
+
+            (addClicked)="addPrescriptionDetails()"
+
+            (editClicked)="editPrescriptionDetails($event)">
+
+        </app-prescription-details-list>
+
+        <app-add-prescription-details
+
+            *ngIf="currentPage == 'add'">
+
+        </app-add-prescription-details>
+
+        <app-edit-prescription-details
+
+            *ngIf="currentPage == 'edit'"
+
+            [prescriptionDetailsIdInput]="selectedPrescriptionDetailsId">
+
+        </app-edit-prescription-details>
+
+    </div>
+
+</div>
