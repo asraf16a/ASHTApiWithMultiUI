@@ -1,1 +1,205 @@
-<p>doctor-list works!</p>
+<div class="page-header">
+
+    <div>
+
+        <h2>
+
+            <i class="bi bi-person-badge-fill text-primary"></i>
+
+            Doctor Management
+
+        </h2>
+
+        <p class="text-muted">
+
+            Manage Doctors
+
+        </p>
+
+    </div>
+
+    <button
+        class="btn btn-primary"
+        (click)="addDoctor()">
+
+        <i class="bi bi-plus-circle"></i>
+
+        Add Doctor
+
+    </button>
+
+</div>
+
+<div class="row g-4 mb-4">
+
+    <div class="col-md-4">
+
+        <div class="card stats-card">
+
+            <div class="card-body">
+
+                <h6>Total Doctors</h6>
+
+                <h2>{{totalDoctors}}</h2>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-4">
+
+        <div class="card stats-card">
+
+            <div class="card-body">
+
+                <h6>Active Doctors</h6>
+
+                <h2 class="text-success">
+
+                    {{activeDoctors}}
+
+                </h2>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-4">
+
+        <div class="card stats-card">
+
+            <div class="card-body">
+
+                <h6>Inactive Doctors</h6>
+
+                <h2 class="text-danger">
+
+                    {{inactiveDoctors}}
+
+                </h2>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="card shadow-sm">
+
+    <div class="card-body">
+
+        <div class="mb-3">
+
+            <input
+                class="form-control"
+                placeholder="Search doctor..."
+                [(ngModel)]="searchText">
+
+        </div>
+
+        <div class="table-responsive">
+
+            <table class="table table-hover">
+
+                <thead class="table-light">
+
+                    <tr>
+
+                        <th>#</th>
+
+                        <th>Name</th>
+
+                        <th>Email</th>
+
+                        <th>Specialization</th>
+
+                        <th>Department</th>
+
+                        <th>Experience</th>
+
+                        <th>Status</th>
+
+                        <th width="150">
+
+                            Action
+
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr *ngFor="let doctor of doctors">
+
+                        <td>{{doctor.id}}</td>
+
+                        <td>
+
+                            <strong>
+
+                                {{doctor.name}}
+
+                            </strong>
+
+                        </td>
+
+                        <td>{{doctor.email}}</td>
+
+                        <td>{{doctor.specialization}}</td>
+
+                        <td>{{doctor.department}}</td>
+
+                        <td>{{doctor.yearsOfExperience}}</td>
+
+                        <td>
+
+                            <span
+                                class="badge"
+                                [class.bg-success]="doctor.status=='Active'"
+                                [class.bg-danger]="doctor.status=='Inactive'">
+
+                                {{doctor.status}}
+
+                            </span>
+
+                        </td>
+
+                        <td>
+
+                            <button
+                                class="btn btn-outline-primary btn-sm me-2"
+                                (click)="editDoctor(doctor)">
+
+                                <i class="bi bi-pencil-square"></i>
+
+                            </button>
+
+                            <button
+                                class="btn btn-outline-danger btn-sm"
+                                (click)="deleteDoctor(doctor)">
+
+                                <i class="bi bi-trash"></i>
+
+                            </button>
+
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>

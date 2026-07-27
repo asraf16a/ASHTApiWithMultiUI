@@ -1,1 +1,31 @@
-<p>doctor works!</p>
+<div class="page-container">
+
+    <div class="content-card">
+
+        <app-doctor-list
+
+            *ngIf="currentPage == 'list'"
+
+            (addClicked)="addDoctor()"
+
+            (editClicked)="editDoctor($event)">
+
+        </app-doctor-list>
+
+        <app-add-doctor
+
+            *ngIf="currentPage == 'add'">
+
+        </app-add-doctor>
+
+        <app-edit-doctor
+
+            *ngIf="currentPage == 'edit'"
+
+            [doctorIdInput]="selectedDoctorId">
+
+        </app-edit-doctor>
+
+    </div>
+
+</div>

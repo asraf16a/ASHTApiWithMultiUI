@@ -1,1 +1,300 @@
-<p>edit-patient works!</p>
+<div class="page-header">
+
+    <div>
+
+        <h2>
+
+            <i class="bi bi-pencil-square text-primary"></i>
+
+            Edit Patient
+
+        </h2>
+
+        <p class="text-muted">
+
+            Update patient information
+
+        </p>
+
+    </div>
+
+</div>
+
+<div class="card shadow-sm">
+
+    <div class="card-body">
+
+        <form
+            [formGroup]="patientForm"
+            (ngSubmit)="update()">
+
+            <div class="row">
+
+                <div class="col-md-6 mb-3">
+
+                    <label class="form-label">
+
+                        First Name
+
+                    </label>
+
+                    <input
+                        class="form-control"
+                        formControlName="firstName">
+
+                </div>
+
+                <div class="col-md-6 mb-3">
+
+                    <label class="form-label">
+
+                        Last Name
+
+                    </label>
+
+                    <input
+                        class="form-control"
+                        formControlName="lastName">
+
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-4 mb-3">
+
+                    <label class="form-label">
+
+                        Date of Birth
+
+                    </label>
+
+                    <input
+                        type="date"
+                        class="form-control"
+                        formControlName="dateOfBirth">
+
+                </div>
+
+                <div class="col-md-4 mb-3">
+
+                    <label class="form-label">
+
+                        Gender
+
+                    </label>
+
+                    <select
+                        class="form-select"
+                        formControlName="gender">
+
+                        <option value="">Select Gender</option>
+                        <option>Male</option>
+                        <option>Female</option>
+                        <option>Other</option>
+
+                    </select>
+
+                </div>
+
+                <div class="col-md-4 mb-3">
+
+                    <label class="form-label">
+
+                        Blood Type
+
+                    </label>
+
+                    <select
+                        class="form-select"
+                        formControlName="bloodType">
+
+                        <option value="">Select Blood Group</option>
+                        <option>A+</option>
+                        <option>A-</option>
+                        <option>B+</option>
+                        <option>B-</option>
+                        <option>AB+</option>
+                        <option>AB-</option>
+                        <option>O+</option>
+                        <option>O-</option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-6 mb-3">
+
+                    <label class="form-label">
+
+                        Phone Number
+
+                    </label>
+
+                    <input
+                        class="form-control"
+                        formControlName="phoneNumber">
+
+                </div>
+
+                <div class="col-md-6 mb-3">
+
+                    <label class="form-label">
+
+                        Email
+
+                    </label>
+
+                    <input
+                        type="email"
+                        class="form-control"
+                        formControlName="email">
+
+                </div>
+
+            </div>
+
+            <div class="mb-3">
+
+                <label class="form-label">
+
+                    Address
+
+                </label>
+
+                <textarea
+                    rows="2"
+                    class="form-control"
+                    formControlName="address"></textarea>
+
+            </div>
+
+            <div class="mb-3">
+
+                <label class="form-label">
+
+                    Allergies
+
+                </label>
+
+                <textarea
+                    rows="2"
+                    class="form-control"
+                    formControlName="allergies"></textarea>
+
+            </div>
+
+            <div class="mb-3">
+
+                <label class="form-label">
+
+                    Medical History
+
+                </label>
+
+                <textarea
+                    rows="2"
+                    class="form-control"
+                    formControlName="medicalHistory"></textarea>
+
+            </div>
+
+            <div class="mb-3">
+
+                <label class="form-label">
+
+                    Current Medications
+
+                </label>
+
+                <textarea
+                    rows="2"
+                    class="form-control"
+                    formControlName="currentMedications"></textarea>
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-6 mb-3">
+
+                    <label class="form-label">
+
+                        Insurance Provider
+
+                    </label>
+
+                    <input
+                        class="form-control"
+                        formControlName="insuranceProvider">
+
+                </div>
+
+                <div class="col-md-6 mb-3">
+
+                    <label class="form-label">
+
+                        Insurance Number
+
+                    </label>
+
+                    <input
+                        class="form-control"
+                        formControlName="insuranceNumber">
+
+                </div>
+
+            </div>
+
+            <div class="form-check mb-3">
+
+                <input
+                    type="checkbox"
+                    class="form-check-input"
+                    formControlName="isActive">
+
+                <label class="form-check-label">
+
+                    Active Patient
+
+                </label>
+
+            </div>
+
+            <hr>
+
+            <div class="text-end">
+
+                <button
+                    type="button"
+                    class="btn btn-secondary me-2"
+                    (click)="cancel()">
+
+                    <i class="bi bi-arrow-left-circle"></i>
+
+                    Back
+
+                </button>
+
+                <button
+                    type="submit"
+                    class="btn btn-primary">
+
+                    <i class="bi bi-check-circle"></i>
+
+                    Update Patient
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>

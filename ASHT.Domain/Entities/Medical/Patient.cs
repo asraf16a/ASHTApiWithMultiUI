@@ -8,18 +8,13 @@
         public DateTime DateOfBirth { get; set; }
         public string Gender { get; set; }
 
-        // Contact Information
         public string PhoneNumber { get; set; }
         public string Email { get; set; }
         public string Address { get; set; }
-
-        // Medical Information
         public string BloodType { get; set; }
         public string Allergies { get; set; }
         public string MedicalHistory { get; set; }
         public string CurrentMedications { get; set; }
-
-
         public string InsuranceProvider { get; set; }
         public string InsuranceNumber { get; set; }
 

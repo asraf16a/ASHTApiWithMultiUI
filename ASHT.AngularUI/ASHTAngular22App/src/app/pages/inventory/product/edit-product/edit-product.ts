@@ -176,7 +176,7 @@ export class EditProductComponent implements OnInit {
 
     reader.onload = () => {
 
-      this.selectedImage = new Uint8Array(reader.result as ArrayBuffer);
+      this.selectedImage = reader.result as string;
 
     };
 

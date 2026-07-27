@@ -1,1 +1,31 @@
-<p>patient works!</p>
+<div class="page-container">
+
+    <div class="content-card">
+
+        <app-patient-list
+
+            *ngIf="currentPage == 'list'"
+
+            (addClicked)="addPatient()"
+
+            (editClicked)="editPatient($event)">
+
+        </app-patient-list>
+
+        <app-add-patient
+
+            *ngIf="currentPage == 'add'">
+
+        </app-add-patient>
+
+        <app-edit-patient
+
+            *ngIf="currentPage == 'edit'"
+
+            [patientIdInput]="selectedPatientId">
+
+        </app-edit-patient>
+
+    </div>
+
+</div>

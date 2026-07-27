@@ -1,1 +1,250 @@
-<p>edit-doctor works!</p>
+<div class="page-header">
+
+    <div>
+
+        <h2>
+
+            <i class="bi bi-pencil-square text-primary"></i>
+
+            Edit Doctor
+
+        </h2>
+
+        <p class="text-muted">
+
+            Update doctor information
+
+        </p>
+
+    </div>
+
+</div>
+
+<div class="card shadow-sm">
+
+    <div class="card-body">
+
+        <form
+            [formGroup]="doctorForm"
+            (ngSubmit)="update()">
+
+            <div class="row">
+
+                <div class="col-md-6 mb-3">
+
+                    <label class="form-label">
+
+                        Doctor Name
+
+                    </label>
+
+                    <input
+                        class="form-control"
+                        formControlName="name">
+
+                </div>
+
+                <div class="col-md-6 mb-3">
+
+                    <label class="form-label">
+
+                        Email
+
+                    </label>
+
+                    <input
+                        type="email"
+                        class="form-control"
+                        formControlName="email">
+
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-6 mb-3">
+
+                    <label class="form-label">
+
+                        Specialization
+
+                    </label>
+
+                    <input
+                        class="form-control"
+                        formControlName="specialization">
+
+                </div>
+
+                <div class="col-md-6 mb-3">
+
+                    <label class="form-label">
+
+                        Qualifications
+
+                    </label>
+
+                    <input
+                        class="form-control"
+                        formControlName="qualifications">
+
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-4 mb-3">
+
+                    <label class="form-label">
+
+                        Gender
+
+                    </label>
+
+                    <select
+                        class="form-select"
+                        formControlName="gender">
+
+                        <option value="">Select Gender</option>
+                        <option>Male</option>
+                        <option>Female</option>
+                        <option>Other</option>
+
+                    </select>
+
+                </div>
+
+                <div class="col-md-4 mb-3">
+
+                    <label class="form-label">
+
+                        Date of Birth
+
+                    </label>
+
+                    <input
+                        type="date"
+                        class="form-control"
+                        formControlName="dateOfBirth">
+
+                </div>
+
+                <div class="col-md-4 mb-3">
+
+                    <label class="form-label">
+
+                        Experience
+
+                    </label>
+
+                    <input
+                        class="form-control"
+                        formControlName="yearsOfExperience">
+
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-6 mb-3">
+
+                    <label class="form-label">
+
+                        License Number
+
+                    </label>
+
+                    <input
+                        class="form-control"
+                        formControlName="licenseNumber">
+
+                </div>
+
+                <div class="col-md-6 mb-3">
+
+                    <label class="form-label">
+
+                        Department
+
+                    </label>
+
+                    <input
+                        class="form-control"
+                        formControlName="department">
+
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-6 mb-3">
+
+                    <label class="form-label">
+
+                        Working Hours
+
+                    </label>
+
+                    <input
+                        class="form-control"
+                        formControlName="workingHours">
+
+                </div>
+
+                <div class="col-md-6 mb-3">
+
+                    <label class="form-label">
+
+                        Status
+
+                    </label>
+
+                    <select
+                        class="form-select"
+                        formControlName="status">
+
+                        <option>Active</option>
+                        <option>Inactive</option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+            <hr>
+
+            <div class="text-end">
+
+                <button
+                    type="button"
+                    class="btn btn-secondary me-2"
+                    (click)="cancel()">
+
+                    <i class="bi bi-arrow-left-circle"></i>
+
+                    Back
+
+                </button>
+
+                <button
+                    type="submit"
+                    class="btn btn-primary">
+
+                    <i class="bi bi-check-circle"></i>
+
+                    Update Doctor
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
