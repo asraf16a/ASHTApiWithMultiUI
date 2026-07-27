@@ -1,1 +1,31 @@
-<p>appointment works!</p>
+<div class="page-container">
+
+    <div class="content-card">
+
+        <app-appointment-list
+
+            *ngIf="currentPage == 'list'"
+
+            (addClicked)="addAppointment()"
+
+            (editClicked)="editAppointment($event)">
+
+        </app-appointment-list>
+
+        <app-add-appointment
+
+            *ngIf="currentPage == 'add'">
+
+        </app-add-appointment>
+
+        <app-edit-appointment
+
+            *ngIf="currentPage == 'edit'"
+
+            [appointmentIdInput]="selectedAppointmentId">
+
+        </app-edit-appointment>
+
+    </div>
+
+</div>

@@ -10,7 +10,7 @@ import { environment } from '../../../environments/environment';
 })
 export class SubCategoryService {
 
-  private apiUrl = `${environment.apiUrl}/SubCategory`;
+  private apiUrl = `${environment.apiBaseUrl}/SubCategory`;
 
   constructor(private http: HttpClient) { }
 

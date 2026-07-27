@@ -11,7 +11,7 @@ import { UserType } from '../models/user-type';
 })
 export class UserTypeService {
 
-  private apiUrl = `${environment.apiUrl}/UserType`;
+  private apiUrl = `${environment.apiBaseUrl}/UserType`;
 
   constructor(private http: HttpClient) { }
 

@@ -1,1 +1,202 @@
-<p>appointment-list works!</p>
+<div class="page-header">
+
+    <div>
+
+        <h2>
+
+            <i class="bi bi-calendar-check-fill text-primary"></i>
+
+            Appointment Management
+
+        </h2>
+
+        <p class="text-muted">
+
+            Manage Patient Appointments
+
+        </p>
+
+    </div>
+
+    <button
+        class="btn btn-primary"
+        (click)="addAppointment()">
+
+        <i class="bi bi-plus-circle"></i>
+
+        Add Appointment
+
+    </button>
+
+</div>
+
+<div class="row g-4 mb-4">
+
+    <div class="col-md-4">
+
+        <div class="card stats-card">
+
+            <div class="card-body">
+
+                <h6>Total Appointments</h6>
+
+                <h2>{{totalAppointments}}</h2>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-4">
+
+        <div class="card stats-card">
+
+            <div class="card-body">
+
+                <h6>Today's Appointments</h6>
+
+                <h2 class="text-success">
+
+                    {{todayAppointments}}
+
+                </h2>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-4">
+
+        <div class="card stats-card">
+
+            <div class="card-body">
+
+                <h6>Upcoming</h6>
+
+                <h2 class="text-primary">
+
+                    {{upcomingAppointments}}
+
+                </h2>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="card shadow-sm">
+
+    <div class="card-body">
+
+        <div class="mb-3">
+
+            <input
+                class="form-control"
+                placeholder="Search appointment..."
+                [(ngModel)]="searchText">
+
+        </div>
+
+        <div class="table-responsive">
+
+            <table class="table table-hover align-middle">
+
+                <thead class="table-light">
+
+                    <tr>
+
+                        <th>#</th>
+
+                        <th>Patient</th>
+
+                        <th>Doctor</th>
+
+                        <th>Appointment Date</th>
+
+                        <th>Visit Type</th>
+
+                        <th>Diagnosis</th>
+
+                        <th width="150">
+
+                            Action
+
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr *ngFor="let appointment of appointments">
+
+                        <td>{{appointment.id}}</td>
+
+                        <td>
+
+                            {{appointment.patientName}}
+
+                        </td>
+
+                        <td>
+
+                            {{appointment.doctorName}}
+
+                        </td>
+
+                        <td>
+
+                            {{appointment.appointmentDate | date:'dd-MMM-yyyy hh:mm a'}}
+
+                        </td>
+
+                        <td>
+
+                            {{appointment.visitType}}
+
+                        </td>
+
+                        <td>
+
+                            {{appointment.diagonosis}}
+
+                        </td>
+
+                        <td>
+
+                            <button
+                                class="btn btn-outline-primary btn-sm me-2"
+                                (click)="editAppointment(appointment)">
+
+                                <i class="bi bi-pencil-square"></i>
+
+                            </button>
+
+                            <button
+                                class="btn btn-outline-danger btn-sm"
+                                (click)="deleteAppointment(appointment)">
+
+                                <i class="bi bi-trash"></i>
+
+                            </button>
+
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
