@@ -51,6 +51,18 @@ export class UserListComponent implements OnInit {
 
 }
 
+get filteredUsers(): User[] {
+    if (!this.searchText) {
+      return this.users;
+    }
+    const search = this.searchText.toLowerCase();
+    return this.users.filter(r =>
+      r.username?.toLowerCase().includes(search) ||
+      r.userTypeName?.toLowerCase().includes(search)
+    );
+  }
+
+
   get totalUsers(): number {
     return this.users.length;
   }

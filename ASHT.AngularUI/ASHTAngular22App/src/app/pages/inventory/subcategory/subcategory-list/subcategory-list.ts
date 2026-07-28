@@ -46,6 +46,17 @@ export class SubcategoryListComponent implements OnInit {
 
   }
 
+  get filteredSubCategories(): SubCategory[] {
+        if (!this.searchText) {
+          return this.subcategories;
+        }
+        const search = this.searchText.toLowerCase();
+        return this.subcategories.filter(r =>
+          r.subCategoryName?.toLowerCase().includes(search)||      
+          r.categoryName?.toLowerCase().includes(search)  
+        );
+      }
+
   get totalSubcategories(): number {
     return this.subcategories.length;
   }

@@ -55,6 +55,18 @@ export class ProductListComponent implements OnInit {
 
   }
 
+  get filteredProducts(): Product[] {
+          if (!this.searchText) {
+            return this.products;
+          }
+          const search = this.searchText.toLowerCase();
+          return this.products.filter(r =>
+            r.name?.toLowerCase().includes(search)||  
+            r.subCategoryName?.toLowerCase().includes(search)||      
+            r.categoryName?.toLowerCase().includes(search)  
+          );
+        }
+
   get totalProducts(): number {
 
     return this.products.length;

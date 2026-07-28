@@ -47,6 +47,17 @@ export class CategoryListComponent implements OnInit {
 
   }
 
+  get filteredCategories(): Category[] {
+      if (!this.searchText) {
+        return this.categories;
+      }
+      const search = this.searchText.toLowerCase();
+      return this.categories.filter(r =>
+        r.name?.toLowerCase().includes(search)        
+      );
+    }
+  
+
   get totalCategories(): number {
     return this.categories.length;
   }
