@@ -32,7 +32,7 @@ export class SubCategoryService {
 
   createSubCategory(model: SubCategory): Observable<any> {
 
-    return this.http.post(`${this.apiUrl}/Create`, model);
+    return this.http.post(`${this.apiUrl}/AddAsync`, model);
 
   }
 

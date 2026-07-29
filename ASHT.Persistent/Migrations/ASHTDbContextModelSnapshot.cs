@@ -282,6 +282,7 @@ namespace ASHT.Persistent.Migrations
                         .HasColumnType("nvarchar(250)");
 
                     b.Property<decimal>("PurchasePrice")
+                        .HasPrecision(18, 2)
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<int>("SubCategoryId")
@@ -565,13 +566,13 @@ namespace ASHT.Persistent.Migrations
                     b.HasOne("ASHT.Domain.Entities.Inventory.Category", "Category")
                         .WithMany()
                         .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("ASHT.Domain.Entities.Inventory.SubCategory", "SubCategory")
                         .WithMany()
                         .HasForeignKey("SubCategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Category");
@@ -584,7 +585,7 @@ namespace ASHT.Persistent.Migrations
                     b.HasOne("ASHT.Domain.Entities.Inventory.Category", "Category")
                         .WithMany()
                         .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Category");

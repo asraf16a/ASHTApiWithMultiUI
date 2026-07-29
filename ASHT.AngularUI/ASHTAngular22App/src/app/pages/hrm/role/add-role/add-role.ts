@@ -47,21 +47,36 @@ export class AddRoleComponent {
     });
   }
 
-  save() {
+  save(): void {
 
-    if (this.roleForm.invalid) {
-
-      this.roleForm.markAllAsTouched();
-
-      return;
-
-    }
-
-    console.log(this.roleForm.value);
-
-    alert('Role Saved Successfully');
-
+  if (this.roleForm.invalid) {
+    this.roleForm.markAllAsTouched();
+    return;
   }
+
+  const formValue = this.roleForm.value;
+
+  const role: Role = {
+    id: 0,
+    roleName: formValue.roleName,
+    description: formValue.description,
+    isActive: formValue.isActive,
+    isDeleted: false
+  };
+
+  this.roleService.createRole(role).subscribe({
+    next: () => {
+      alert('Role Saved Successfully');
+      this.roleForm.reset({
+        isActive: true
+      });
+    },
+    error: (err) => {
+      console.error(err);
+      alert('Failed to save role.');
+    }
+  });
+}
 
   cancel() {
 

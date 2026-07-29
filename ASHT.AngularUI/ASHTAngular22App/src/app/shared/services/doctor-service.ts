@@ -9,13 +9,13 @@ import { Doctor } from '../models/doctor';
 })
 export class DoctorService {
 
-  private apiUrl = 'https://localhost:7241/api/Doctor';
+  private apiUrl = 'https://localhost:7241/api/Doctors';
 
   constructor(private http: HttpClient) { }
 
   getAllDoctors(): Observable<Doctor[]> {
     return this.http
-      .get<any>(`${this.apiUrl}/GetAll`)
+      .get<any>(`${this.apiUrl}/GetAllDoctors`)
       .pipe(map(res => res.data));
   }
 

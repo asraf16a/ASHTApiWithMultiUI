@@ -1,6 +1,9 @@
-﻿namespace ASHT.Application.Hrm.Role.Commands.Create
+﻿using ASHT.Application.Hrm.Role.Queries;
+using MediatR;
+
+namespace ASHT.Application.Hrm.Role.Commands.Create
 {
-    public class CreateRoleCommand
+    public class CreateRoleCommand : IRequest<RoleVM>
     {
         public int Id { get; set; }
         public string RoleName { get; set; }

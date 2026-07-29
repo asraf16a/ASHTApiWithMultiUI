@@ -19,6 +19,21 @@ namespace ASHT.Domain.Config
             builder.Property(r => r.PurchasePrice);
             //builder.Property(x => x.PurchasePrice).HasPrecision(18, 2);
             builder.Property(r => r.ImageContent);
+
+            builder.HasOne(p => p.Category)
+                   .WithMany()
+                   .HasForeignKey(p => p.CategoryId)
+                   .OnDelete(DeleteBehavior.Restrict);
+
+            builder.HasOne(p => p.SubCategory)
+                   .WithMany()
+                   .HasForeignKey(p => p.SubCategoryId)
+                   .OnDelete(DeleteBehavior.Restrict);
+
+
+            builder.Property(x => x.PurchasePrice)
+                   .HasPrecision(18, 2);
+
         }
     }
 }

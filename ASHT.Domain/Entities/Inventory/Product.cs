@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ASHT.Domain.Entities.Inventory
 {
-    [Table("Product", Schema = "inventory")]
+    [Table("Products", Schema = "inventory")]
     public class Product
     {
         [Key]

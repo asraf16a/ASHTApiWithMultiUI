@@ -13,6 +13,11 @@ namespace ASHT.Domain.Config
             builder.Property(r => r.Id).UseIdentityColumn();
             builder.Property(r => r.SubCategoryName).HasMaxLength(250).IsRequired();
             builder.Property(r => r.CategoryId);
+
+            builder.HasOne(s => s.Category)
+                   .WithMany()
+                   .HasForeignKey(s => s.CategoryId)
+                   .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }

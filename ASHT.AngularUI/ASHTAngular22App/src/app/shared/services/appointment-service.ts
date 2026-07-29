@@ -20,7 +20,7 @@ export class AppointmentService {
   getAllAppointments(): Observable<Appointment[]> {
 
     return this.http
-      .get<any>(`${this.apiUrl}/GetAll`)
+      .get<any>(`${this.apiUrl}/GetAllAppointments`)
       .pipe(
         map(response => response.data as Appointment[])
       );
@@ -41,10 +41,7 @@ export class AppointmentService {
   // Create Appointment
   createAppointment(appointment: Appointment): Observable<any> {
 
-    return this.http.post(
-      `${this.apiUrl}/AddAsync`,
-      appointment
-    );
+    return this.http.post(`${this.apiUrl}/AddAsync`,appointment);
 
   }
 
