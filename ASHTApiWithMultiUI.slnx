@@ -5,5 +5,6 @@
   <Project Path="ASHT.Domain/ASHT.Domain.csproj" />
   <Project Path="ASHT.Infrastructure/ASHT.Infrastructure.csproj" />
   <Project Path="ASHT.Persistent/ASHT.Persistent.csproj" />
+  <Project Path="ASHT.RazorPageUI/ASHT.RazorPageUI.csproj" Id="3de8612c-d2a9-4285-a533-cd85ba6f0127" />
   <Project Path="ASHT.SharedKarnel/ASHT.SharedKarnel.csproj" />
 </Solution>

@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Pages\medical\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ASHT.Domain\ASHT.Domain.csproj" />
+    <ProjectReference Include="..\ASHT.Persistent\ASHT.Persistent.csproj" />
+  </ItemGroup>
+
+</Project>
