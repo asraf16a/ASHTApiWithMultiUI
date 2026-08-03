@@ -3,13 +3,14 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, map } from 'rxjs';
 
 import { PrescriptionDetails } from '../models/prescription-details';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PrescriptionDetailsService {
 
-  private apiUrl = 'https://localhost:7241/api/PrescriptionDetails';
+   private apiUrl = `${environment.apiUrl}/PrescriptionDetails`;
 
   constructor(
     private http: HttpClient
@@ -18,7 +19,7 @@ export class PrescriptionDetailsService {
   // Get All
   getAllPrescriptionDetails(): Observable<PrescriptionDetails[]> {
 
-    return this.http.get<any>(`${this.apiUrl}/GetAll`).pipe(
+    return this.http.get<any>(`${this.apiUrl}/GetAllPrescriptionDetails`).pipe(
 
       map(response => response.data)
 

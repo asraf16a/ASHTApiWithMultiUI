@@ -106,6 +106,7 @@ export class AddUserComponent {
 }
   cancel() {
 
+    console.log('Cancel clicked');
     this.router.navigate(['/users']);
 
   }

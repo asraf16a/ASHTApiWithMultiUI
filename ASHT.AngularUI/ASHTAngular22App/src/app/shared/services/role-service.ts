@@ -7,7 +7,6 @@ import { Observable, map } from 'rxjs';
 import { Role } from '../models/role';
 
 import { environment } from '../../../environments/environment';
-import { ApiResponse } from '../models/api-response';
 
 @Injectable({
 
@@ -36,6 +35,8 @@ export class RoleService {
   // Get Role By Id
 
   getRoleById(id: number): Observable<Role> {
+
+    
 
     return this.http.get<Role>(`${this.apiUrl}/${id}`);
 
